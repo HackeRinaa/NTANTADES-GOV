@@ -1,0 +1,221 @@
+.h-DRASH {
+    background-color: #fff9f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.h-DRASH .div{
+    background-color: #fff9f1;
+    height: 1513px;
+    position: relative;
+    width: 1440px;
+}
+
+.h-DRASH .text-wrapper {
+    color: #4a4e69;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 449px;
+    letter-spacing: 0;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    top: 1195px;
+    white-space: nowrap;
+}
+
+.h-DRASH .overlap {
+    background-image: url("../../public/drash.png");
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 687px;
+    left: -40px;
+    position: absolute;
+    top: 0;
+    width: 1600px;
+}
+
+.h-DRASH .text-wrapper-2 {
+    color: #e9631a;
+    font-family: 'Roboto-SemiBold', Helvetica;
+    font-size: 64px;
+    font-weight: 600;
+    left: 557px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 401px;
+    white-space: nowrap;
+}
+
+.h-DRASH .NAV {
+    align-items: center;
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    left: 30px;
+    position: absolute;
+    top: 30px;
+    width: 1380px;
+}
+
+.h-DRASH .text-wrapper-3 {
+    color: #e9631a;
+    font-family: 'Roboto-Light', Helvetica;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-shadow: 0px 2px 2px #b58d8d;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.h-DRASH .navbar {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+}
+
+.h-DRASH .text-wrapper-4 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold",  Helvetica;
+    font-style: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.h-DRASH .frame {
+    height: 43px;
+    position: relative;
+    width: 150px;
+}
+
+.h-DRASH .overlap-group {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color:#6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 40px;
+    position: relative; 
+}
+
+.h-DRASH .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Roboto-SemiBold",  Helvetica;
+    font-style: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    left: 29px;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+}
+
+.h-DRASH .p {
+    color: transparent;
+    font-family: "Roboto-Light",  Helvetica;
+    font-size: 30px;
+    font-weight: 300;
+    left: 154px;
+    letter-spacing: 0;
+    line-height: 45px;
+    position: absolute;
+    top: 723px;
+    width: 1000px;
+}
+
+.h-DRASH .span {
+    color: #4a4e69;
+}
+
+.h-DRASH .text-wrapper-6 {
+    color: #a8d5ba;
+}
+
+.h-DRASH .text-wrapper-7 {
+    color: #4a4e69;
+    font-family: "Roboto-Regular",  Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    left: 227px;
+    letter-spacing: 0;
+    line-height: 45px;
+    position: absolute;
+    text-align: center;
+    top: 1075px;
+}
+
+.h-DRASH .rectangle {
+    background-color: #e9631a;
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 1002px;
+    width: 1440px;
+}
+
+.h-DRASH .group {
+    height: 50px;
+    left: 492px;
+    position: absolute;
+    top: 1271px;
+    width: 455px;
+}
+
+.h-DRASH .div-wrapper {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 200px;
+}
+
+.h-DRASH .text-wrapper-8 {
+    color: #fff9f3;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    left: 52px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 6px;
+    white-space: nowrap;
+}
+
+.h-DRASH .overlap-group-wrapper {
+    background-color: #ffffff;
+    height: 50px;
+    left: 225px;
+    position: absolute;
+    top: 0;
+    width: 200px;
+}
+
+.h-DRASH .overlap-group-2 {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4pxp 4px #00000040;
+    height: 50px;
+    position: relative;
+}
