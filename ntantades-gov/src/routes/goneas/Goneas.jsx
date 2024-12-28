@@ -4,30 +4,27 @@ function Goneas() {
   return (
     <div className="PARENT">
     <div className="div">
-      <div className="NAV">
-        <div className="text-wrapper">govgr</div>
+    <div className="NAV">
+            <div className="text-wrapper-3">govgr</div>
 
-        <div className="navbar">
-          <div className="text-wrapper-2">ΑΡΧΙΚΗ</div>
+            <div className="navbar">
+              <a className="text-wrapper-4" href="#home">ΑΡΧΙΚΗ</a>
+              <a className="text-wrapper-4" href="#drash">Η ΔΡΑΣΗ</a>
+              <a className="text-wrapper-4" href="#goneas">ΓΟΝΕΑΣ</a>
+              <a className="text-wrapper-4" href="#ntanta">ΝΤΑΝΤΑ</a>
+              <a className="text-wrapper-4" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
 
-          <div className="text-wrapper-2">Η ΔΡΑΣΗ</div>
-
-          <div className="text-wrapper-2">ΓΟΝΕΑΣ</div>
-
-          <div className="text-wrapper-2">ΝΤΑΝΤΑ</div>
-
-          <div className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</div>
-
-          <div className="frame">
-            <div className="overlap-group">
-              <div className="text-wrapper-3">ΣΥΝΔΕΣΗ</div>
+              <div className="frame">
+                <div className="overlap-group">
+                  <a className="text-wrapper-5" href="#sindesi">ΣΥΝΔΕΣΗ</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
       <div className="text">
-        <div className="text-wrapper-4">Έχεις Μικρό Παιδί ;</div>
+        <div className="text-wrapper-4-2">Έχεις Μικρό Παιδί ;</div>
 
         <p className="p">
           Αναζητάς λύσεις για την φροντίδα <br />
@@ -37,7 +34,7 @@ function Goneas() {
         <p className="div-2">
           <span className="span">Η Δράση</span>
 
-          <span className="text-wrapper-5">
+          <span className="text-wrapper-5-2">
             {" "}
             &#34;Νταντάδες της Γειτονιάς&#34;
           </span>
@@ -60,14 +57,14 @@ function Goneas() {
         </p>
 
         <div className="div-wrapper">
-          <div className="text-wrapper-6">Βρες Νταντά</div>
+          <a className="text-wrapper-6 btn">Βρες Νταντά</a>
         </div>
 
         <div className="overlap-group-wrapper">
           <div className="overlap-group-2">
             <div className="rectangle" />
 
-            <div className="text-wrapper-7">Συχνές Ερωτήσεις</div>
+            <a className="text-wrapper-7 btn">Συχνές Ερωτήσεις</a>
           </div>
         </div>
       </div>
@@ -78,7 +75,6 @@ function Goneas() {
         src="../public/goneas.png"
       />
     </div>
-  </div>
   );
 };
 
