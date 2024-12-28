@@ -30,8 +30,8 @@ function Homepage() {
         <div className="overlap-wrapper">
           <div className="overlap">
             <div className="overlap-2">
-              <img className="line" alt="Line" src="../public/line1.svg" />
-              <img className="img" alt="Line" src="../public/line2.svg" />
+                <div className="line"></div>
+                <div className="img"></div>
             </div>
 
             <div className="overlap-3">

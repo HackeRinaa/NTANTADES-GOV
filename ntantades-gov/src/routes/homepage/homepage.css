@@ -123,18 +123,24 @@
 
 .HERO-SECTION .line {
   height: 3px;
+  background-color: #4a4e69;
   left: 0;
   position: absolute;
   top: 22px;
   width: 200px;
+  z-index: 1;
+  border-radius: 15px;
 }
 
 .HERO-SECTION .img {
   height: 150px;
   left: 26px;
+  background-color: #4a4e69;
   position: absolute;
   top: 0;
   width: 3px;
+  z-index: 1;
+  border-radius: 15px;
 }
 
 .HERO-SECTION .overlap-3 {
@@ -190,7 +196,9 @@
   left: 104px;
   position: absolute;
   top: 548px;
-  width: 457px;
+  max-width: 457px;
+  display: flex;
+  gap: 10px;
 }
 
 .HERO-SECTION .role-button {
@@ -203,7 +211,9 @@
   font-weight: 500;
   height: 50px;
   cursor: pointer;
-  margin-right: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
   margin-top: 52px;
 }
 
