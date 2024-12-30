@@ -7,6 +7,8 @@ import Ntanta from "./routes/ntanta/Ntanta";
 import Goneas from "./routes/goneas/Goneas";
 import Drash from "./routes/drash/Drash";
 import NannyInfo from './routes/nannyInfo/NannyInfo';
+import Neighbourhood from './routes/neighbourhood/Neighbourhood';
+import Selectnanny from './routes/selectnanny/Selectnanny';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
     path: '/ntanta-info',
     element: <NannyInfo/>,
   },
+  {
+    path: '/neighbourhood',
+    element: <Neighbourhood/>,
+  },
+  {
+    path: '/selectnanny',
+    element: <Selectnanny/>,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

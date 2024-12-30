@@ -1,0 +1,87 @@
+.HERO-SECTION {
+    background-color: #fff9f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .HERO-SECTION .div {
+    background-color: #fff9f1;
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .HERO-SECTION .NAV {
+    align-items: center;
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    left: 30px;
+    position: absolute;
+    top: 30px;
+    width: 1380px;
+  }
+  
+  .HERO-SECTION .text-wrapper {
+    color: #e9631a;
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-shadow: 0px 2px 2px #b58d8d;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .HERO-SECTION .navbar {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+  }
+  
+  .HERO-SECTION .text-wrapper-2 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .HERO-SECTION .frame {
+    height: 43px;
+    position: relative;
+    width: 150px;
+  }
+  
+  .HERO-SECTION .overlap-group {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 40px;
+    position: relative;
+  }
+  
+  .HERO-SECTION .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    left: 29px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
