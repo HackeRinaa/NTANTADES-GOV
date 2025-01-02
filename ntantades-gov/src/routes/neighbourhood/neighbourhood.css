@@ -1,4 +1,4 @@
-.HERO-SECTION {
+.NEIGHBOURHOOD {
     background-color: #fff9f1;
     display: flex;
     flex-direction: row;
@@ -6,14 +6,14 @@
     width: 100%;
   }
   
-  .HERO-SECTION .div {
+  .NEIGHBOURHOOD .div {
     background-color: #fff9f1;
     height: 1024px;
     position: relative;
     width: 1440px;
   }
   
-  .HERO-SECTION .NAV {
+  .NEIGHBOURHOOD .NAV {
     align-items: center;
     display: flex;
     height: 65px;
@@ -24,7 +24,7 @@
     width: 1380px;
   }
   
-  .HERO-SECTION .text-wrapper {
+  .NEIGHBOURHOOD .text-wrapper {
     color: #e9631a;
     font-family: "Roboto-Light", Helvetica;
     font-size: 50px;
@@ -37,7 +37,7 @@
     width: fit-content;
   }
   
-  .HERO-SECTION .navbar {
+  .NEIGHBOURHOOD .navbar {
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
@@ -45,7 +45,7 @@
     position: relative;
   }
   
-  .HERO-SECTION .text-wrapper-2 {
+  .NEIGHBOURHOOD .text-wrapper-2 {
     color: #4a4e69;
     font-family: "Roboto-SemiBold", Helvetica;
     font-size: 20px;
@@ -57,13 +57,13 @@
     width: fit-content;
   }
   
-  .HERO-SECTION .frame {
+  .NEIGHBOURHOOD .frame {
     height: 43px;
     position: relative;
     width: 150px;
   }
   
-  .HERO-SECTION .overlap-group {
+  .NEIGHBOURHOOD .overlap-group {
     background-color: #a8d5ba;
     border: 1px solid;
     border-color: #6a9d7e;
@@ -73,7 +73,7 @@
     position: relative;
   }
   
-  .HERO-SECTION .text-wrapper-3 {
+  .NEIGHBOURHOOD .text-wrapper-3 {
     color: #ffffff;
     font-family: "Roboto-SemiBold", Helvetica;
     font-size: 20px;
@@ -86,7 +86,7 @@
     white-space: nowrap;
   }
   
-  .HERO-SECTION .text-wrapper-4 {
+  .NEIGHBOURHOOD .text-wrapper-4 {
     color: #4a4e69;
     font-family: "Roboto-SemiBold", Helvetica;
     font-size: 64px;
@@ -98,7 +98,7 @@
     top: 261px;
   }
   
-  .HERO-SECTION .overlap-wrapper {
+  .NEIGHBOURHOOD .overlap-wrapper {
     height: 356px;
     left: 902px;
     position: absolute;
@@ -106,13 +106,13 @@
     width: 300px;
   }
   
-  .HERO-SECTION .overlap {
+  .NEIGHBOURHOOD .overlap {
     height: 602px;
     position: relative;
     width: 508px;
   }
   
-  .HERO-SECTION .overlap-2 {
+  .NEIGHBOURHOOD .overlap-2 {
     height: 150px;
     left: 0;
     position: absolute;
@@ -120,7 +120,7 @@
     width: 200px;
   }
   
-  .HERO-SECTION .line {
+  .NEIGHBOURHOOD .line {
     height: 3px;
     left: 0;
     position: absolute;
@@ -128,7 +128,7 @@
     width: 200px;
   }
   
-  .HERO-SECTION .img {
+  .NEIGHBOURHOOD .img {
     height: 150px;
     left: 26px;
     position: absolute;
@@ -136,7 +136,7 @@
     width: 3px;
   }
   
-  .HERO-SECTION .overlap-3 {
+  .NEIGHBOURHOOD .overlap-3 {
     height: 549px;
     left: 29px;
     position: absolute;
@@ -144,7 +144,7 @@
     width: 479px;
   }
   
-  .HERO-SECTION .rectangle {
+  .NEIGHBOURHOOD .rectangle {
     background-color: #e9631a;
     border-radius: 10px;
     filter: blur(50px);
@@ -155,7 +155,7 @@
     width: 141px;
   }
   
-  .HERO-SECTION .rectangle-2 {
+  .NEIGHBOURHOOD .rectangle-2 {
     background-color: #e9631a;
     border-radius: 10px;
     filter: blur(50px);
@@ -166,7 +166,7 @@
     width: 141px;
   }
   
-  .HERO-SECTION .screenshot {
+  .NEIGHBOURHOOD .screenshot {
     height: 526px;
     left: 5px;
     object-fit: cover;
@@ -175,7 +175,7 @@
     width: 474px;
   }
   
-  .HERO-SECTION .element {
+  .NEIGHBOURHOOD .element {
     color: #4a4e69;
     font-family: "Roboto-Light", Helvetica;
     font-size: 32px;
@@ -187,7 +187,7 @@
     top: 441px;
   }
   
-  .HERO-SECTION .group {
+  .NEIGHBOURHOOD .group {
     height: 111px;
     left: 104px;
     position: absolute;
@@ -195,14 +195,14 @@
     width: 457px;
   }
   
-  .HERO-SECTION .group2 {
+  .NEIGHBOURHOOD .group2 {
     height: 111px;
     left: 104px;
     position: absolute;
     top: 420px;
     width: 457px;
   }
-  .HERO-SECTION .div-wrapper {
+  .NEIGHBOURHOOD .div-wrapper {
     background-color: #a8d5ba;
     border: 1px solid;
     border-color: #6a9d7e;
@@ -215,7 +215,28 @@
     width: 200px;
   }
   
-  .HERO-SECTION .text-wrapper-5 {
+  
+  .NEIGHBOURHOOD .overlap-group-wrapper {
+    background-color: #ffffff;
+    height: 50px;
+    left: 500px;
+    position: absolute;
+    top: 5px;
+    width: 200px;
+  }
+  
+  .NEIGHBOURHOOD .overlap-group-2 {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    position: relative;
+  }
+  
+    
+  .NEIGHBOURHOOD .text-wrapper-5 {
     color: #4a4e69;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 30px;
@@ -227,27 +248,8 @@
     top: 375px;
     white-space: nowrap;
   }
-  
-  .HERO-SECTION .overlap-group-wrapper {
-    background-color: #ffffff;
-    height: 50px;
-    left: 500px;
-    position: absolute;
-    top: 5px;
-    width: 200px;
-  }
-  
-  .HERO-SECTION .overlap-group-2 {
-    background-color: #a8d5ba;
-    border: 1px solid;
-    border-color: #6a9d7e;
-    border-radius: 15px;
-    box-shadow: 0px 4px 4px #00000040;
-    height: 50px;
-    position: relative;
-  }
-  
-  .HERO-SECTION .text-wrapper-6 {
+
+  .NEIGHBOURHOOD .text-wrapper-6 {
     color: #4a4e69;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 30px;
@@ -260,7 +262,7 @@
     white-space: nowrap;
   }
 
-  .HERO-SECTION .text-wrapper-7 {
+  .NEIGHBOURHOOD .text-wrapper-7 {
     color: #ffffff;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 28px;
@@ -274,8 +276,8 @@
   }
 
   
-  .HERO-SECTION .overlap-group-wrapper2 {
-    background-color: #ffffff;
+  .NEIGHBOURHOOD .overlap-group-wrapper2 {
+    background-color: #fff9f1;
     height: 50px;
     left: 220px;
     position: absolute;
@@ -283,7 +285,7 @@
     width: 300px;
   }
   
-  .HERO-SECTION .overlap-group-3 {
+  .NEIGHBOURHOOD .overlap-group-3 {
     background-color: #fff9f1;
     border: 1px solid;
     border-color: #4a4e69;
@@ -293,7 +295,7 @@
     position: relative;
   }
 
-  .HERO-SECTION .text-wrapper-8 {
+  .NEIGHBOURHOOD .text-wrapper-8 {
     color: #4a4e69;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 20px;
@@ -306,8 +308,8 @@
     white-space: nowrap;
   }
 
-  .HERO-SECTION .overlap-group-wrapper3 {
-    background-color: #ffffff;
+  .NEIGHBOURHOOD .overlap-group-wrapper3 {
+    background-color: #fff9f1;
     height: 50px;
     left: 670px;
     position: absolute;
@@ -315,7 +317,7 @@
     width: 300px;
   }
   
-  .HERO-SECTION .overlap-group-4 {
+  .NEIGHBOURHOOD .overlap-group-4 {
     background-color: #fff9f1;
     border: 1px solid;
     border-color: #4a4e69;
@@ -325,7 +327,7 @@
     position: relative;
   }
 
-  .HERO-SECTION .text-wrapper-9 {
+  .NEIGHBOURHOOD .text-wrapper-9 {
     color: #4a4e69;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 20px;
@@ -337,7 +339,7 @@
     top: 10px;
     white-space: nowrap;
   }
-  .HERO-SECTION .screenshot {
+  .NEIGHBOURHOOD .screenshot {
     height: 414px;
     left: 370px;
     object-fit: cover;

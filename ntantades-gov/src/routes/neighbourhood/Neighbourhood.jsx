@@ -2,7 +2,7 @@ import "./neighbourhood.css";
 
 function Neighbourhood() {
     return (
-        <div className="HERO-SECTION">
+        <div className="NEIGHBOURHOOD">
             <div className="div">
                 <div className="NAV">
                   <div className="text-wrapper">govgr</div>
