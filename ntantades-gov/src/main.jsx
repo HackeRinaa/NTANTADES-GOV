@@ -7,6 +7,8 @@ import Ntanta from "./routes/ntanta/Ntanta";
 import Goneas from "./routes/goneas/Goneas";
 import Drash from "./routes/drash/Drash";
 import NannyInfo from './routes/nannyInfo/NannyInfo';
+import NtantaFaq from './routes/ntantaFaq/NtantaFaq';
+import GoneasFaq from './routes/goneasFaq/GoneasFaq';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
   {
     path: '/ntanta-info',
     element: <NannyInfo/>,
+  },
+  {
+    path: '/ntanta-faq',
+    element: <NtantaFaq/>,
+  },
+  {
+    path: '/goneas-faq',
+    element: <GoneasFaq/>,
   },
 ]);
 

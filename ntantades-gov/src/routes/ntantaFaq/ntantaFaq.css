@@ -1,0 +1,164 @@
+.NtantaFaq {
+    background-color: #fff9f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.NtantaFaq .div {
+    background-color: #fff9f2;
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .NtantaFaq .NAV {
+    align-items : center;
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    left: 30px;
+    position: absolute;
+    top: 30px;
+    width: 1380px;
+  }
+  
+  .NtantaFaq .text-wrapper-3 {
+    color: #e9631a;
+    font-family: 'Roboto-Light', Helvetica;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-shadow: 0px 2px 2px #b58d8d;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .NtantaFaq .navbar {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+  }
+  
+  .NtantaFaq .text-wrapper-4 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold",  Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-decoration: none; /* Ensure links are not underlined */
+    transition: color 0.3s; /* Add transition for hover effect */
+  }
+  
+  .NtantaFaq .text-wrapper-4:hover {
+    color: #e9631a; /* Change color on hover */
+  }
+  
+  .NtantaFaq .frame {
+    height: 43px;
+    position: relative;
+    width: 150px;
+  }
+  
+  .NtantaFaq .overlap-group {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 40px;
+    position: relative; 
+  }
+  
+  .NtantaFaq .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "Roboto-SemiBold",  Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    left: 29px;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
+
+.NtantaFaq .text-text-wrapper-4-2 {
+    color: #4a4e69;
+    font-size: 36px;
+    font-weight: 500;
+    position: absolute;
+    left: 40%;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 261px;
+    white-space: nowrap;
+}
+
+.NtantaFaq .p {
+    color: #4a4e69;
+    font-size: 20px;
+    font-weight: 300;
+    position: absolute;
+    left: 31%;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    top: 333px;
+}
+
+.NtantaFaq .container {
+    position: absolute;
+    width: 756px;
+    top: 410px;
+    left: 29%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.NtantaFaq .question {
+    height: 41px;
+    width: 756px;
+    position: relative;
+}
+
+
+.NtantaFaq .text-text-wrapper-5-2 {
+    color: #4a4e69;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -1px;
+    white-space: nowrap;
+}
+
+.NtantaFaq .upload {
+    height: 16px;
+    position: absolute;
+    left: 721px;
+    object-fit: cover;
+    top: 0;
+    width: 16px;
+}
+
+.NtantaFaq .question hr {
+    color: #4a4e69;
+    display: block;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 756px;
+}
