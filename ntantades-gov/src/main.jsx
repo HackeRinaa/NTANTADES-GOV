@@ -9,6 +9,10 @@ import Drash from "./routes/drash/Drash";
 import NannyInfo from './routes/nannyInfo/NannyInfo';
 import Neighbourhood from './routes/neighbourhood/Neighbourhood';
 import Selectnanny from './routes/selectnanny/Selectnanny';
+import Cvoverlay from './routes/cvoverlay/Cvoverlay';
+import Login from './routes/login/Login';
+import Appointment from './routes/appointment/Appointment';
+import Completedmessage from './routes/completedmessage/Completedmessage'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +42,22 @@ const router = createBrowserRouter([
   {
     path: '/selectnanny',
     element: <Selectnanny/>,
+  },
+  {
+    path: '/cvoverlay',
+    element: <Cvoverlay/>,
+  },
+  {
+    path: '/login',
+    element: <Login/>,
+  },
+  {
+    path: '/appointment',
+    element: <Appointment/>,
+  },
+  {
+    path: '/completedmessage',
+    element: <Completedmessage/>,
   }
 ]);
 

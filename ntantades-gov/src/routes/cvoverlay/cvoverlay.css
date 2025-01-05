@@ -1,4 +1,4 @@
-.SELECTNANNY {
+.CVOVERLAY {
     background-color: #fff9f1;
     display: flex;
     flex-direction: row;
@@ -6,14 +6,14 @@
     width: 100%;
   }
   
-  .SELECTNANNY .div {
+  .CVOVERLAY .div {
     background-color: #fff9f1;
     height: 1024px;
     position: relative;
     width: 1440px;
   }
   
-  .SELECTNANNY .NAV {
+  .CVOVERLAY .NAV {
     align-items: center;
     display: flex;
     height: 65px;
@@ -24,7 +24,7 @@
     width: 1380px;
   }
   
-  .SELECTNANNY .text-wrapper {
+  .CVOVERLAY .text-wrapper {
     color: #e9631a;
     font-family: "Roboto-Light", Helvetica;
     font-size: 50px;
@@ -37,7 +37,7 @@
     width: fit-content;
   }
   
-  .SELECTNANNY .navbar {
+  .CVOVERLAY .navbar {
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
@@ -45,7 +45,7 @@
     position: relative;
   }
   
-  .SELECTNANNY .text-wrapper-2 {
+  .CVOVERLAY .text-wrapper-2 {
     color: #4a4e69;
     font-family: "Roboto-SemiBold", Helvetica;
     font-size: 20px;
@@ -57,13 +57,13 @@
     width: fit-content;
   }
   
-  .SELECTNANNY .frame {
+  .CVOVERLAY .frame {
     height: 43px;
     position: relative;
     width: 150px;
   }
   
-  .SELECTNANNY .overlap-group {
+  .CVOVERLAY .overlap-group {
     background-color: #a8d5ba;
     border: 1px solid;
     border-color: #6a9d7e;
@@ -73,7 +73,7 @@
     position: relative;
   }
   
-  .SELECTNANNY .text-wrapper-3 {
+  .CVOVERLAY .text-wrapper-3 {
     color: #ffffff;
     font-family: "Roboto-SemiBold", Helvetica;
     font-size: 20px;
@@ -85,83 +85,16 @@
     top: 8px;
     white-space: nowrap;
   }
-
-
-  .SELECTNANNY .text {
-    height: 463px;
-    left: 6px;
-    position: absolute;
-    top: 10px;
-    width: 2082px;
-  }
-
-  .SELECTNANNY .text-wrapper-4 {
-    color: #4a4e69;
-    font-family: "Roboto-SemiBold", Helvetica;
-    font-size: 44px;
-    font-weight: 600;
-    left: 500px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 261px;
-  }
-
-  .SELECTNANNY .text-wrapper-5 {
-    color: #4a4e69;
-    font-family: "Roboto-Medium", Helvetica;
-    font-size: 24px;
-    font-weight: 530;
-    left: 830px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 361px;
-  }
-  
-  .SELECTNANNY .overlap-group-wrapper {
+  .CVOVERLAY .overlap-group-wrapper {
     background-color: #ffffff;
     height: 50px;
-    left: 550px;
+    left: 150px;
     position: absolute;
-    top: 430px;
+    top: 730px;
     width: 300px;
   }
   
-  .SELECTNANNY .overlap-group-2 {
-    background-color: #fff9f1;
-    border: 1px solid;
-    border-color: #4a4e69;
-    border-radius: 15px;
-    box-shadow: 0px 4px 4px #00000040;
-    height: 50px;
-    position: relative;
-  }
-  
-    
-  .SELECTNANNY .text-wrapper-6 {
-    color: #4a4e69;
-    font-family: "Roboto-Medium", Helvetica;
-    font-size: 30px;
-    font-weight: 500;
-    left: 20px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 8px;
-    white-space: nowrap;
-  }
-
-  .SELECTNANNY .overlap-group-wrapper2 {
-    background-color: #ffffff;
-    height: 50px;
-    left: 1000px;
-    position: absolute;
-    top: 430px;
-    width: 300px;
-  }
-
-  .SELECTNANNY .overlap-group-3 {
+  .CVOVERLAY .overlap-group-2 {
     background-color: #a8d5ba;
     border: 1px solid;
     border-color: #6a9d7e;
@@ -172,7 +105,7 @@
   }
   
     
-  .SELECTNANNY .text-wrapper-7 {
+  .CVOVERLAY .text-wrapper-6 {
     color: #ffffff;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 30px;
@@ -185,17 +118,97 @@
     white-space: nowrap;
   }
 
-  
-  .SELECTNANNY .overlap-group-wrapper3 {
+  .CVOVERLAY .overlap-group-wrapper1 {
     background-color: #ffffff;
     height: 50px;
-    left: 800px;
+    left: 50px;
     position: absolute;
-    top: 830px;
+    top: 430px;
+    width: 600px;
+  }
+  
+  .CVOVERLAY .overlap-group-3 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 250px;
+    position: relative;
+  }
+  
+    
+  .CVOVERLAY .text-wrapper-7 {
+    color: #4a4e69;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 30px;
+    white-space: nowrap;
+  }
+
+  .CVOVERLAY .text {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: flex-start; 
+    margin: 50px auto; 
+    position: absolute;
+    top: 140px; 
+    left: 70px;
+  }
+  
+  .CVOVERLAY .row {
+    display: flex;
+    gap: 200px; 
+  }
+  
+  .CVOVERLAY .text-wrapper-8 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .CVOVERLAY .text2 {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: flex-start; 
+    margin: 50px auto; 
+    position: relative;
+    top: 170px; 
+    left: 90px;
+  }
+  
+  
+  .CVOVERLAY .text-wrapper-9 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: normal;
+    
+  }
+  
+
+  .CVOVERLAY .overlap-group-wrapper3 {
+    background-color: #ffffff;
+    height: 50px;
+    left: 900px;
+    position: absolute;
+    top: 730px;
     width: 300px;
   }
 
-  .SELECTNANNY .overlap-group-4 {
+  .CVOVERLAY .overlap-group-4 {
     background-color: #fff9f1;
     border: 1px solid;
     border-color: #4a4e69;
@@ -206,7 +219,7 @@
   }
   
     
-  .SELECTNANNY .text-wrapper-8 {
+  .CVOVERLAY .text-wrapper-10 {
     color: #4a4e69;
     font-family: "Roboto-Medium", Helvetica;
     font-size: 30px;
@@ -219,45 +232,11 @@
     white-space: nowrap;
   }
 
-  .SELECTNANNY .screenshot1 {
-    height: 220px;
-    left: 1000px;
+  .CVOVERLAY .screenshot1 {
+    height: 420px;
+    left: 800px;
     object-fit: cover;
     position: absolute;
-    top: 550px;
-    width: 220px;
-  }
-
-  .SELECTNANNY .screenshot2 {
-    height: 220px;
-    left: 775px;
-    object-fit: cover;
-    position: absolute;
-    top: 550px;
-    width: 220px;
-  }
-  .SELECTNANNY .screenshot3 {
-    height: 220px;
-    left: 575px;
-    object-fit: cover;
-    position: absolute;
-    top: 550px;
-    width: 220px;
-  }
-
-  .SELECTNANNY .screenshot4 {
-    height: 220px;
-    left: 375px;
-    object-fit: cover;
-    position: absolute;
-    top: 550px;
-    width: 220px;
-  }
-  .SELECTNANNY .screenshot5 {
-    height: 220px;
-    left: 1210px;
-    object-fit: cover;
-    position: absolute;
-    top: 550px;
-    width: 220px;
+    top: 210px;
+    width: 520px;
   }

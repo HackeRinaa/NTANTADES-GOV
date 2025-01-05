@@ -34,7 +34,7 @@ function Neighbourhood() {
                 <div className="group">
                 <div className="overlap-group-wrapper">
                     <div className="overlap-group-2">
-                    <div className="text-wrapper-7"> Βρές Νταντά</div>
+                    <div className="text-wrapper-7"> Βρείτε Νταντά</div>
                     </div>
 
                     

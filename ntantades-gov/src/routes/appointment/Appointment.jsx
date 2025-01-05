@@ -1,8 +1,8 @@
-import "./selectnanny.css";
+import "./appointment.css";
 
-function Selectnanny() {
+function Appointment() {
     return (
-        <div className="SELECTNANNY">
+        <div className="APPOINTMENT">
             <div className="div">
                 <div className="NAV">
                   <div className="text-wrapper">govgr</div>
@@ -26,60 +26,57 @@ function Selectnanny() {
                     </div>
                 </div>
             </div>
-            <div className="text">
-                <div className="text-wrapper-4">Γνώριστε τις Νταντάδες της Γειτονιάς σας</div>
-            </div>     
-            <div className="text-wrapper-5">Γνώριστε την Μαρία </div>
 
-            <div className="overlap-group-wrapper">
-                <div className="overlap-group-2">
-                    <div className="text-wrapper-6"> Δειτε το Βιογραφικό </div>
-                </div>
-            </div>
+            <div className="text">
+                <div className="text-wrapper-4">Κλείστε το Οnline Pαντεβού σας Τώρα</div>
+            </div>  
+
+            <div className="text-wrapper-8">Διαθέσιμες Ώρες: </div>
 
             
-            <div className="overlap-group-wrapper2">
-                <div className="overlap-group-3">
-                    <div className="text-wrapper-7"> Κλείστε ραντεβού </div>
+            <div className="overlap-group-wrapper">
+                <div className="overlap-group-2">
+                    <div className="text-wrapper-5"> Πίσω </div>
                 </div>
             </div>
 
+            <div className="overlap-group-wrapper2">
+                <div className="overlap-group-3">
+                    <div className="text-wrapper-6"> Συνέχεια </div>
+                </div>
+            </div>
 
             <div className="overlap-group-wrapper3">
                 <div className="overlap-group-4">
-                    <div className="text-wrapper-8">  Πίσω </div>
+                    <div className="text-wrapper-7"> 9:00 </div>
+                </div>
+
+                <div className="overlap-group-4">
+                    <div className="text-wrapper-7"> 9:30 </div>
+                </div>
+
+                <div className="overlap-group-4">
+                    <div className="text-wrapper-7"> 11:00 </div>
+                </div>
+
+                <div className="overlap-group-4">
+                    <div className="text-wrapper-7"> 13:00 </div>
+                </div>
+
+                <div className="overlap-group-4">
+                    <div className="text-wrapper-7"> 13:30 </div>
                 </div>
             </div>
 
-
+            <div class="circle">19</div>
 
             <img
                 className="screenshot1"
                 alt="Screenshot1"
-                src="../public/nan1.png"
-            />
-            <img
-                className="screenshot2"
-                alt="Screenshot2"
-                src="../public/nan2.png"
-            />
-             <img
-                className="screenshot3"
-                alt="Screenshot3"
-                src="../public/nan3.png"
-            />
-            <img
-                className="screenshot4"
-                alt="Screenshot4"
-                src="../public/nan4.png"
-            />
-            <img
-                className="screenshot5"
-                alt="Screenshot5"
-                src="../public/nan5.png"
+                src="../public/calender.png"
             />
         </div>
     );
 };
             
-export default Selectnanny;
+export default Appointment;
