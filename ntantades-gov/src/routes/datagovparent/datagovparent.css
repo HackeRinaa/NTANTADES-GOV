@@ -1,0 +1,429 @@
+.DATAGOVPARENT {
+    background-color: #fff9f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .DATAGOVPARENT .div {
+    background-color: #fff9f1;
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .DATAGOVPARENT .NAV {
+    align-items: center;
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    left: 30px;
+    position: absolute;
+    top: 30px;
+    width: 1380px;
+  }
+  
+  .DATAGOVPARENT .text-wrapper {
+    color: #e9631a;
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-shadow: 0px 2px 2px #b58d8d;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .DATAGOVPARENT .navbar {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+  }
+  
+  .DATAGOVPARENT .text-wrapper-2 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .DATAGOVPARENT .frame {
+    height: 43px;
+    position: relative;
+    width: 150px;
+  }
+  
+  .DATAGOVPARENT .overlap-group {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 40px;
+    position: relative;
+  }
+  
+  .DATAGOVPARENT .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    left: 29px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
+
+  .DATAGOVPARENT .overlap-group-wrapper {
+    background-color: #ffffff;
+    height: 50px;
+    left: 150px;
+    position: absolute;
+    top: 200px;
+    width: 700px;
+  }
+  
+  .DATAGOVPARENT .overlap-group-2 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 700px;
+    position: relative;
+  }
+  
+    
+  .DATAGOVPARENT .text-wrapper-4 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: 220px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
+
+  .DATAGOVPARENT .overlap-group-3 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 40px;
+    top: 150px;
+    position: absolute;
+  }
+  
+    
+ .DATAGOVPARENT .text-wrapper-5 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    left: 10px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+  }
+
+  .DATAGOVPARENT .text-wrapper-6 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 200;
+    left: 10px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -30px;
+    white-space: nowrap;
+  }
+
+  .DATAGOVPARENT .overlap-group-4 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 370px;
+    top: 150px;
+    position: absolute;
+  }
+  
+  .DATAGOVPARENT .overlap-group-5 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 40px;
+    top: 370px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-6 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 370px;
+    top: 370px;
+    position: absolute;
+  }
+  
+  .DATAGOVPARENT .overlap-group-7 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 40px;
+    top: 490px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-8 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 370px;
+    top: 490px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-9 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 40px;
+    top: 600px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-10 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 370px;
+    top: 600px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-11 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 50px;
+    left: 40px;
+    top: 260px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-12 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 50px;
+    left: 100px;
+    top: 260px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-13 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 90px;
+    left: 160px;
+    top: 260px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-14 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 1240px;
+    top: 330px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-15 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 50px;
+    left: 1240px;
+    top: 440px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-16 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 50px;
+    left: 1300px;
+    top: 440px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-17 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 90px;
+    left: 1360px;
+    top: 440px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-18 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 1240px;
+    top: 550px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-19 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 250px;
+    left: 1240px;
+    top: 650px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-20 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 360px;
+    left: 1240px;
+    top: 720px;
+    position: absolute;
+  }
+
+  .DATAGOVPARENT .overlap-group-wrapper2 {
+    background-color: #ffffff;
+    height: 50px;
+    left: 1400px;
+    position: absolute;
+    top: 850px;
+    width: 250px;
+  }
+
+  .DATAGOVPARENT .overlap-group-21 {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    position: relative;
+  }
+  
+    
+  .DATAGOVPARENT .text-wrapper-7 {
+    color: #ffffff;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    left: 65px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
+
+  .DATAGOVPARENT .text-wrapper-8 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 30px;
+    font-weight: 600;
+    left: -200px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -640px;
+    white-space: nowrap;
+  }
+
+  

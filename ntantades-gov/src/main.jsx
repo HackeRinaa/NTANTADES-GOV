@@ -13,6 +13,8 @@ import Cvoverlay from './routes/cvoverlay/Cvoverlay';
 import Login from './routes/login/Login';
 import Appointment from './routes/appointment/Appointment';
 import Completedmessage from './routes/completedmessage/Completedmessage'
+import Datagovparent from './routes/datagovparent/Datagovparent'
+import Profileparent from './routes/profileparent/Profileparent'
 
 const router = createBrowserRouter([
   {
@@ -58,6 +60,14 @@ const router = createBrowserRouter([
   {
     path: '/completedmessage',
     element: <Completedmessage/>,
+  },
+  {
+    path: '/datagovparent',
+    element: <Datagovparent/>,
+  },
+  {
+    path: '/profileparent',
+    element: <Profileparent/>,
   }
 ]);
 

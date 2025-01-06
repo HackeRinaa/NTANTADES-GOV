@@ -1,0 +1,299 @@
+.PROFILEPARENT {
+    background-color: #fff9f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .PROFILEPARENT .div {
+    background-color: #fff9f1;
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .PROFILEPARENT .NAV {
+    align-items: center;
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    left: 30px;
+    position: absolute;
+    top: 30px;
+    width: 1380px;
+  }
+  
+  .PROFILEPARENT .text-wrapper {
+    color: #e9631a;
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-shadow: 0px 2px 2px #b58d8d;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .PROFILEPARENT .navbar {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+  }
+  
+  .PROFILEPARENT .text-wrapper-2 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .PROFILEPARENT .frame {
+    height: 43px;
+    position: relative;
+    width: 150px;
+  }
+  
+  .PROFILEPARENT .overlap-group {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 40px;
+    position: relative;
+  }
+  
+  .PROFILEPARENT .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 600;
+    left: 29px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
+
+  .PROFILEPARENT .screenshot1 {
+    height: 600px;
+    left: 1090px;
+    object-fit: cover;
+    position: absolute;
+    top: 170px;
+    width: 600px;
+  }
+
+  .PROFILEPARENT .screenshot2 {
+    height: 200px;
+    left: 880px;
+    object-fit: cover;
+    position: absolute;
+    top: 470px;
+    width: 200px;
+  }
+
+  .PROFILEPARENT .overlap-group-wrapper {
+    background-color: #ffffff;
+    height: 50px;
+    left: 1400px;
+    position: absolute;
+    top: 850px;
+    width: 250px;
+  }
+
+  .PROFILEPARENT .overlap-group-2 {
+    background-color: #a8d5ba;
+    border: 1px solid;
+    border-color: #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    position: relative;
+  }
+  
+    
+  .PROFILEPARENT .text-wrapper-4 {
+    color: #ffffff;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    left: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 8px;
+    white-space: nowrap;
+  }
+
+  .PROFILEPARENT .overlap-group-wrapper2 {
+    background-color: #ffffff;
+    height: 50px;
+    left: 900px;
+    position: absolute;
+    top: 700px;
+    width: 150px;
+  }
+
+  .PROFILEPARENT .overlap-group-7 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    position: relative;
+  }
+  
+    
+  .PROFILEPARENT .text-wrapper-9 {
+    color: #4a4e69;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    white-space: nowrap;
+  }
+
+   
+  .PROFILEPARENT .text-wrapper-10 {
+    color: #4a4e69;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 890px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 430px;
+    white-space: nowrap;
+  }
+
+  
+  .PROFILEPARENT .text {
+    height: 463px;
+    left: 6px;
+    position: absolute;
+    top: 10px;
+    width: 2082px;
+  }
+
+  .PROFILEPARENT .text-wrapper-5 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 44px;
+    font-weight: 600;
+    left: 300px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 180px;
+  }
+
+  .PROFILEPARENT .text-wrapper-6 {
+    color: #4a4e69;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 24px;
+    font-weight: 530;
+    left: 300px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 261px;
+  }
+
+  
+  .PROFILEPARENT .overlap-group-3 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 500px;
+    left: 300px;
+    top: 400px;
+    position: absolute;
+  }
+  
+    
+ .PROFILEPARENT .text-wrapper-7 {
+    color: #B5B3BA;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 10px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+  }
+
+  .PROFILEPARENT .text-wrapper-8 {
+    color: #4a4e69;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 20px;
+    font-weight: 200;
+    left: 10px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: -30px;
+    white-space: nowrap;
+  }
+
+  
+  .PROFILEPARENT .overlap-group-4 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 500px;
+    left: 300px;
+    top: 500px;
+    position: absolute;
+  }
+  
+  .PROFILEPARENT .overlap-group-5 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 500px;
+    left: 300px;
+    top: 600px;
+    position: absolute;
+  }
+  
+  .PROFILEPARENT .overlap-group-6 {
+    background-color: #fff9f1;
+    border: 1px solid;
+    border-color: #4a4e69;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 150px;
+    width: 500px;
+    left: 300px;
+    top: 700px;
+    position: absolute;
+  }
