@@ -115,50 +115,54 @@
 }
 
 .GoneasFaq .container {
-    position: absolute;
-    width: 756px;
-    top: 410px;
-    left: 29%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
+  position: absolute; 
+  top: 410px;
+  left: 29%;
+  width: 756px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .GoneasFaq .question {
-    height: 41px;
-    width: 756px;
-    position: relative;
+  min-height: 41px;
+  width: 756px;
+  position: relative;
 }
 
+.GoneasFaq .question-header {
+  display: flex;
+  justify-content: space-between; /* Align question text and arrow */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+}
 
-.GoneasFaq .text-text-wrapper-5-2 {
-    color: #4a4e69;
-    font-size: 20px;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: -1px;
-    white-space: nowrap;
+.GoneasFaq .text-wrapper-5-2 {
+  color: #4a4e69;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0; /* Remove margin to avoid extra space */
 }
 
 .GoneasFaq .upload {
-    height: 16px;
-    position: absolute;
-    left: 721px;
-    object-fit: cover;
-    top: 0;
-    width: 16px;
+  height: 16px;
+  width: 16px;
+  transition: transform 0.3s ease; /* Add transition for smooth rotation */
+}
+
+.GoneasFaq .upload.rotated {
+  transform: rotate(180deg); /* Rotate the arrow when expanded */
 }
 
 .GoneasFaq .question hr {
-    color: #4a4e69;
-    display: block;
-    height: 1px;
-    position: absolute;
-    left: 0;
-    top: 40px;
-    width: 756px;
+  color: #4a4e69;
+  display: block;
+  height: 1px;
+  width: 756px;
+}
+
+.GoneasFaq .text-wrapper-7 {
+  color: #4a4e69;
+  display: block;
+  margin-top: 10px; /* Add some space above the answer */
+  transition: max-height 0.3s ease; /* Optional: Add transition for the text */
 }

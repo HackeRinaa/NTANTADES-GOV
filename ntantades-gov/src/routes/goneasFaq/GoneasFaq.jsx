@@ -1,6 +1,33 @@
-import "./goneasFaq.css"
+import "./goneasFaq.css";
+import { useState } from "react";
 
 function GoneasFaq() {
+
+    const [expandedIndex, setExpandedIndex] = useState(null);
+
+    const questions = [
+        {
+            question: "Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή?",
+            answer: "Χρειάζεσαι τίτλο σπουδών, πιστοποιητικό πρώτων βοηθειών και πιστοποιητικό υγείας. Αν είσαι πολίτης της Ε.Ε. ή τρίτης χώρας θα χρειαστείς επιπλέον έγγραφα όπως άδεια διαμονής."
+        },
+        {
+            question: "Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή?",
+            answer: "Χρειάζεσαι τίτλο σπουδών, πιστοποιητικό πρώτων βοηθειών και πιστοποιητικό υγείας. Αν είσαι πολίτης της Ε.Ε. ή τρίτης χώρας θα χρειαστείς επιπλέον έγγραφα όπως άδεια διαμονής."
+        },
+        {
+            question: "Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή?",
+            answer: "Χρειάζεσαι τίτλο σπουδών, πιστοποιητικό πρώτων βοηθειών και πιστοποιητικό υγείας. Αν είσαι πολίτης της Ε.Ε. ή τρίτης χώρας θα χρειαστείς επιπλέον έγγραφα όπως άδεια διαμονής."
+        },
+        {
+            question: "Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή?",
+            answer: "Χρειάζεσαι τίτλο σπουδών, πιστοποιητικό πρώτων βοηθειών και πιστοποιητικό υγείας. Αν είσαι πολίτης της Ε.Ε. ή τρίτης χώρας θα χρειαστείς επιπλέον έγγραφα όπως άδεια διαμονής."
+        },
+    ];
+
+    const toggleQuestion = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
   return (
     <div className='GoneasFaq'>
         <div className="div">
@@ -29,34 +56,26 @@ function GoneasFaq() {
             Αν έχετε επιπλέον ερωτήσεις επικοινωνήστε με το κέντρο επικοινωνίας.
         </p>
         <div className="container">
-            <div className="question">
-                <p className="text-wrapper-5-2">
-                    Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή; 
-                </p>
-                <img className="upload" src="/arrow.png" alt="" />
-                <hr/>
-            </div>
-            <div className="question">
-                <p className="text-wrapper-5-2">
-                    Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή; 
-                </p>
-                <img className="upload" src="/arrow.png" alt="" />
-                <hr/>
-            </div>
-            <div className="question">
-                <p className="text-wrapper-5-2">
-                    Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή; 
-                </p>
-                <img className="upload" src="/arrow.png" alt="" />
-                <hr/>
-            </div>
-            <div className="question">
-                <p className="text-wrapper-5-2">
-                    Ε : Ποιά είναι τα απαραίτητα πιστοποιητικά για την εγγραφή; 
-                </p>
-                <img className="upload" src="/arrow.png" alt="" />
-                <hr/>
-            </div>
+            {questions.map((item, index) => (
+                <div className="question" key={index}>
+                    <div className="question-header" onClick={() => toggleQuestion(index)}>
+                        <p className="text-wrapper-5-2">
+                            {item.question}
+                        </p>
+                        <img
+                            className={`upload ${expandedIndex === index ? 'rotated' : ''}`}
+                            src="/arrow.png"
+                            alt=""
+                        />
+                    </div>
+                    <hr />
+                    {expandedIndex === index && (
+                        <p className="text-wrapper-7">
+                            {item.answer}
+                        </p>
+                    )}
+                </div>
+            ))}
         </div>
     </div>
   );
