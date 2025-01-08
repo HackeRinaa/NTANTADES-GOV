@@ -10,6 +10,9 @@ import NannyInfo from './routes/nannyInfo/NannyInfo';
 import NtantaFaq from './routes/ntantaFaq/NtantaFaq';
 import GoneasFaq from './routes/goneasFaq/GoneasFaq';
 import NtantaGov from './routes/ntantaGov/NtantaGov';
+import CvTemplate from './routes/cvTemplate/CvTemplate';
+import GoneasGov from './routes/goneasGov/GoneasGov';
+import GoneasProfile from './routes/goneasProfile/GoneasProfile';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,18 @@ const router = createBrowserRouter([
   {
     path: '/ntanta-gov',
     element: <NtantaGov/>,
+  },
+  {
+    path: '/goneas-gov',
+    element: <GoneasGov/>,
+  },
+  {
+    path: '/goneas-profile',
+    element: <GoneasProfile/>,
+  },
+  {
+    path: '/cv-template',
+    element: <CvTemplate/>,
   },
 ]);
 

@@ -1,8 +1,8 @@
-import "./ntantaGov.css";
+import "./goneasGov.css";
 import { useRef } from "react";
 
 
-function NtantaGov() {
+function GoneasGov() {
 
     const fileInputRef = useRef(null);
 
@@ -12,7 +12,7 @@ function NtantaGov() {
     };
 
   return (
-    <div className='NtantaGov'>
+    <div className='GoneasGov'>
         <div className="div">
             <div className="NAV">
                 <div className="text-wrapper-3">govgr</div>
@@ -86,11 +86,11 @@ function NtantaGov() {
                 </div>
             </div>
             <div className="data-1">
-            <p className="header">Ανέβασμα Πιστοποιητικών</p>
+            <p className="header">Στοιχεία Τέκνου</p>
                 <div className="row">
                     <div className="column">
                         <div className="fieldName2">
-                            <p className="fieldName">Πιστοποιητικό Σπουδών :</p>
+                            <p className="fieldName">ΑΜΚΑ Τέκνου :</p>
                             <img src="/exclamation 1.png" alt="" />
                         </div>
                         <input className="input" 
@@ -122,12 +122,35 @@ function NtantaGov() {
                 </div>
                 <div className="row">
                     <div className="column">
-                        <div className="fieldName2">
-                            <p className="fieldName">Πιστοποιητικό Υγείας :</p>
-                            <img src="" alt="" />
+                    <p className="fieldName">Ημερομηνία Γέννησης</p>
+                        <div className="date">
+                            <input className="input2" type="text" />
+                            <input className="input2" type="text" />
+                            <input className="input3" type="text" />
                         </div>
-                        
-                        <input className="input" 
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="column">
+                    <label  className="fieldName" htmlFor="Relation">Σχέση Αιτούντος με Τέκνο :</label>
+                    <select id="relation">
+                        <option value="">Επιλέξτε σχέση</option>
+                        <option value="morning">Γονέας</option>
+                        <option value="afternoon">Κηδεμόνας</option>
+                        <option value="evening">Άλλο</option>
+                    </select>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="column">
+                    <label className="fieldName" htmlFor="Proof">Επιλέξτε δικαιολογητικό γονικής μέριμνας :</label>
+                    <select id="proof">
+                        <option  value="">Επιλέξτε Δικαιολογητικό</option>
+                        <option value="morning">Πιστοποιητικό Γέννησης</option>
+                        <option value="afternoon">Διαβατήριο</option>
+                        <option value="evening">Άλλο</option>
+                    </select>
+                    <input className="input" 
                                 type="file"
                                 ref={fileInputRef}
                                 onChange={handleFileChange}
@@ -152,80 +175,6 @@ function NtantaGov() {
                                 ? fileInputRef.current.files[0].name
                                 : "Ανέβασε απο τον υπολογιστή σου"}
                         </label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="column">
-                        <div className="fieldName2">
-                            <p className="fieldName">Πιστοποιητικό Πρώτων Βοηθειών :</p>
-                            <img src="/exclamation 1.png" alt="" />
-                        </div>
-                        
-                        <input className="input" 
-                                type="file"
-                                ref={fileInputRef}
-                                onChange={handleFileChange}
-                                style={{ display: 'none'}} 
-                                id="file-upload"
-                        />
-                        <label
-                            htmlFor="file-upload"
-                            style={{
-                                display: 'block',
-                                padding: '10px',
-                                border: '1px solid #ccc',
-                                borderRadius: '10px',
-                                cursor: 'pointer',
-                                textAlign: 'center',
-                                color: '#4a4e69',
-                                fontSize: '16px',
-                                fontWeight: '100',
-                            }}
-                        >
-                            {fileInputRef.current && fileInputRef.current.files.length > 0
-                                ? fileInputRef.current.files[0].name
-                                : "Ανέβασε απο τον υπολογιστή σου"}
-                        </label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="column">
-                        <div className="fieldName2">
-                            <p className="fieldName">Αντίγραφο Ποινικού Μητρώου :</p>
-                            <img src="/exclamation 1.png" alt="" />
-                        </div>
-                        
-                        <input className="input" 
-                                type="file"
-                                ref={fileInputRef}
-                                onChange={handleFileChange}
-                                style={{ display: 'none'}} 
-                                id="file-upload"
-                        />
-                        <label
-                            htmlFor="file-upload"
-                            style={{
-                                display: 'block',
-                                padding: '10px',
-                                border: '1px solid #ccc',
-                                borderRadius: '10px',
-                                cursor: 'pointer',
-                                textAlign: 'center',
-                                color: '#4a4e69',
-                                fontSize: '16px',
-                                fontWeight: '100',
-                            }}
-                        >
-                            {fileInputRef.current && fileInputRef.current.files.length > 0
-                                ? fileInputRef.current.files[0].name
-                                : "Ανέβασε απο τον υπολογιστή σου"}
-                        </label>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="column">
-                        <p className="fieldName">Δυνατότητα Φύλαξης στον Χώρο μου :</p>
-                        <input className="input4" type="text" />
                     </div>
                 </div>
             </div>
@@ -237,4 +186,4 @@ function NtantaGov() {
   )
 }
 
-export default NtantaGov
+export default GoneasGov

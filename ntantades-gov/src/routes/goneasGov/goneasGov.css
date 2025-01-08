@@ -1,17 +1,17 @@
-.NtantaGov {
+.GoneasGov {
     background-color: #fff9f2;
     width: 100%;
     height: 1024px;
 }
 
-.NtantaGov .div {
+.GoneasGov .div {
     background-color: #fff9f2;
     height: auto;
     position: relative;
     width: 1440px;
   }
   
-  .NtantaGov .NAV {
+  .GoneasGov .NAV {
     align-items : center;
     display: flex;
     height: 65px;
@@ -22,7 +22,7 @@
     width: 1380px;
   }
   
-  .NtantaGov .text-wrapper-3 {
+  .GoneasGov .text-wrapper-3 {
     color: #e9631a;
     font-family: 'Roboto-Light', Helvetica;
     font-size: 50px;
@@ -35,7 +35,7 @@
     width: fit-content;
   }
   
-  .NtantaGov .navbar {
+  .GoneasGov .navbar {
     align-items: center;
     display: inline-flex;
     flex: 0 0 auto;
@@ -43,7 +43,7 @@
     position: relative;
   }
   
-  .NtantaGov .text-wrapper-4 {
+  .GoneasGov .text-wrapper-4 {
     color: #4a4e69;
     font-family: "Roboto-SemiBold",  Helvetica;
     font-size: 20px;
@@ -55,17 +55,17 @@
     transition: color 0.3s; /* Add transition for hover effect */
   }
   
-  .NtantaGov .text-wrapper-4:hover {
+  .GoneasGov .text-wrapper-4:hover {
     color: #e9631a; /* Change color on hover */
   }
   
-  .NtantaGov .frame {
+  .GoneasGov .frame {
     height: 43px;
     position: relative;
     width: 150px;
   }
   
-  .NtantaGov .overlap-group {
+  .GoneasGov .overlap-group {
     background-color: #a8d5ba;
     border: 1px solid;
     border-color: #6a9d7e;
@@ -75,7 +75,7 @@
     position: relative; 
   }
   
-  .NtantaGov .text-wrapper-5 {
+  .GoneasGov .text-wrapper-5 {
     color: #ffffff;
     font-family: "Roboto-SemiBold",  Helvetica;
     font-size: 20px;
@@ -89,7 +89,7 @@
   }
 
 
-  .NtantaGov .container {
+  .GoneasGov .container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,7 +99,7 @@
     gap: 60px;
   }
 
-  .NtantaGov .data-1 {
+  .GoneasGov .data-1 {
     width: 557px;
     height: auto;
     margin: 20px 0;
@@ -134,6 +134,16 @@
             .fieldName {
                 font-size: 20px;
                 font-weight: 100;
+            }
+
+            #relation,#proof {
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #4a4e69;
+              background-color: transparent;
+              border-radius: 5px;
+              font-size: 14px;
+              box-sizing: border-box;
             }
 
             .input {
@@ -176,7 +186,7 @@
     }
   }
 
-  .NtantaGov .box {
+  .GoneasGov .box {
     height: 50px;
     width: 224px;
     position: absolute;
