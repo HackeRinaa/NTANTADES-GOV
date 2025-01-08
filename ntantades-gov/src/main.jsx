@@ -13,6 +13,7 @@ import NtantaGov from './routes/ntantaGov/NtantaGov';
 import CvTemplate from './routes/cvTemplate/CvTemplate';
 import GoneasGov from './routes/goneasGov/GoneasGov';
 import GoneasProfile from './routes/goneasProfile/GoneasProfile';
+import Appointment from './routes/appointment/Appointment';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: '/cv-template',
     element: <CvTemplate/>,
+  },
+  {
+    path: '/appointment',
+    element: <Appointment/>,
   },
 ]);
 
