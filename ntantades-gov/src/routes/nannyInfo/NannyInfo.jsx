@@ -1,4 +1,3 @@
-import React from 'react';
 import FlippingCard from '../../components/flippingCard/FlippingCard';
 import "./nannyInfo.css";
 
@@ -54,8 +53,8 @@ function NannyInfo() {
                     ))}
                 </div>
 
-                <div className="div-wrapper">
-                    <a className="text-wrapper-8">Εγγραφή</a>
+                <div className="button">
+                    <button className="activeBtn">Εγγραφή</button>
                 </div>
             </div>
     );

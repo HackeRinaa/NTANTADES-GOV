@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import './flippingCard.css'; 
 
 const FlippingCard = ({ title, image, description, details }) => {
@@ -6,26 +6,28 @@ const FlippingCard = ({ title, image, description, details }) => {
     <div className="card">
       <div className="card-inner">
         <div className="card-front">
-          <div className="overlap">
-            <div className="rectangle" />
             <img src={image} alt="Icon" className="folder" />
-            <div className="text-wrapper-5-2">{title}</div>
-          </div>
+            <h2 className="title-1">{title}</h2>    
         </div>
         <div className="card-back">
-          <div className="back-content">
-            <h2>{title}</h2>
-            <ul>
-              {details.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-            <p>Note: {description}</p>
-          </div>
+          <h2 className='title-1'>{title}</h2>
+          <ul className="list">
+            {details.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+          <p className='note'>Note: {description}</p>
         </div>
       </div>
     </div>
   );
+};
+
+FlippingCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  details: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default FlippingCard;

@@ -14,6 +14,7 @@ import CvTemplate from './routes/cvTemplate/CvTemplate';
 import GoneasGov from './routes/goneasGov/GoneasGov';
 import GoneasProfile from './routes/goneasProfile/GoneasProfile';
 import Appointment from './routes/appointment/Appointment';
+import SelectNanny from './routes/selectNanny/SelectNanny';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
   {
     path: '/appointment',
     element: <Appointment/>,
+  },
+  {
+    path: '/select-nanny',
+    element: <SelectNanny/>,
   },
 ]);
 
