@@ -2,57 +2,60 @@ import "./homepage.css";
 
 function Homepage() {
   return (
-    <div className="HERO-SECTION">
-      <div className="div">
+    <div className="HERO-SECTION"> 
       <div className="NAV">
-            <div className="text-wrapper-3">govgr</div>
-
-            <div className="navbar">
-              <a className="text-wrapper-4" href="#home">ΑΡΧΙΚΗ</a>
-              <a className="text-wrapper-4" href="#drash">Η ΔΡΑΣΗ</a>
-              <a className="text-wrapper-4" href="#goneas">ΓΟΝΕΑΣ</a>
-              <a className="text-wrapper-4" href="#ntanta">ΝΤΑΝΤΑ</a>
-              <a className="text-wrapper-4" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-
-              <div className="frame">
-                <div className="overlap-group">
-                  <a className="text-wrapper-5" href="#sindesi">ΣΥΝΔΕΣΗ</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        <div className="text-wrapper-4-2">
-          Νταντάδες της <br />
-          Γειτονιάς
+        <div className="logo">
+          govgr
         </div>
-
-        <div className="overlap-wrapper">
-          <div className="overlap">
-            <div className="overlap-2">
-                <div className="line"></div>
-                <div className="img"></div>
-            </div>
-
-            <div className="overlap-3">
-              <div className="rectangle" />
-              <div className="rectangle-2" />
-              <img className="screenshot" alt="Screenshot" src="../public/main.png" />
-            </div>
+        <div className="navbar">
+          <a className="nav-link" href="#home">ΑΡΧΙΚΗ</a>
+          <a className="nav-link" href="#drash">Η ΔΡΑΣΗ</a>
+          <a className="nav-link" href="#goneas">ΓΟΝΕΑΣ</a>
+          <a className="nav-link" href="#ntanta">ΝΤΑΝΤΑ</a>
+          <a className="nav-link" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+          <div className="auth-button">
+            <button className="login-btn" href="#sindesi">ΣΥΝΔΕΣΗ</button>
           </div>
-        </div>
-
-        <p className="element">
-          Υπηρεσία κατ' οίκον φροντίδας βρεφών και νηπίων <br />
-          από 2 μηνών έως 2,5 ετών
-        </p>
-
-        <div className="group">
-          <button className="role-button">Γονέας</button>
-          <button className="role-button">Νταντά</button>
-          <div className="text-wrapper-6">Είμαι :</div>
         </div>
       </div>
+      <div className="container">
+        <div className="column">
+          <div className="headers">
+            <h1 className="title">
+              Νταντάδες της <br />
+              Γειτονιάς
+            </h1>
+            <p className="sub-title">
+              Υπηρεσία κατοίκον φροντίδας βρεφών και νηπίων <br />
+              από 2 μηνών έως 2,5 ετών
+            </p>
+          </div>
+          <div className="btn-selection">
+            <h2 className="option">Eίμαι :</h2>
+            <div className="btns">
+              <button className="activeBtn">Γονέας</button>
+              <button className="activeBtn">Νταντά</button>
+            </div>
+          </div>
+        </div>
+        <div className="column">
+          <div className="wrapper">
+            <div className="lines">
+              <div className="line-1"></div>
+              <div className="line-2"></div>
+            </div>
+            <div className="picture">
+              <div className="rectangle"></div>
+              <div className="rectangle-2"></div>
+              <img className="image" alt="image" src="/main.png" />
+            </div>  
+          </div>
+        </div>
+      </div>
+
+
+ 
+      
     </div>
   );
 };
