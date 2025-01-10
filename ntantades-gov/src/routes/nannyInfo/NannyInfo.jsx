@@ -25,38 +25,34 @@ function NannyInfo() {
 
     return (
         <div className="NannyInfo">
-            <div className="div">
-                <div className="NAV">
-                    <div className="text-wrapper-3">govgr</div>
-                    <div className="navbar">
-                        <a className="text-wrapper-4" href="#home">ΑΡΧΙΚΗ</a>
-                        <a className="text-wrapper-4" href="#drash">Η ΔΡΑΣΗ</a>
-                        <a className="text-wrapper-4" href="#goneas">ΓΟΝΕΑΣ</a>
-                        <a className="text-wrapper-4" href="#ntanta">ΝΤΑΝΤΑ</a>
-                        <a className="text-wrapper-4" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-                        <div className="frame">
-                            <div className="overlap-group">
-                                <a className="text-wrapper-5" href="#sindesi">ΣΥΝΔΕΣΗ</a>
-                            </div>
-                        </div>
+            <div className="NAV">
+                <div className="logo">
+                    govgr
+                </div>
+                <div className="navbar">
+                    <a className="nav-link" href="#home">ΑΡΧΙΚΗ</a>
+                    <a className="nav-link" href="#drash">Η ΔΡΑΣΗ</a>
+                    <a className="nav-link" href="#goneas">ΓΟΝΕΑΣ</a>
+                    <a className="nav-link" href="#ntanta">ΝΤΑΝΤΑ</a>
+                    <a className="nav-link" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+                    <div className="auth-button">
+                        <button className="login-btn" href="#sindesi">ΣΥΝΔΕΣΗ</button>
                     </div>
                 </div>
             </div>
-                <div className="title">
-                    <div className="text-wrapper-4-2">Καλώς Ήρθες</div>
-                    <p className="p">Υπέβαλε την αίτηση σου και γίνε μέρος του Μητρώου Επιμελητών,</p>
+            <div className="main-container">
+                <div className="header">
+                    <h1 className="title">Καλώς Ήρθες</h1>
+                    <p className="sub-title">Υπέβαλε την αίτηση σου και γίνε μέρος του Μητρώου Επιμελητών,</p>
                 </div>
-
                 <div className='cards'>
                     {cardData.map((data, index) => (
                         <FlippingCard key={index} {...data} />
                     ))}
                 </div>
-
-                <div className="button">
-                    <button className="activeBtn">Εγγραφή</button>
-                </div>
+                <button className="activeBtn">Εγγραφή</button>     
             </div>
+        </div>
     );
 }
 
