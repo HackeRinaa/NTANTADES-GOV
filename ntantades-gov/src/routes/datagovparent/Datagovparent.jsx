@@ -1,29 +1,30 @@
 import "./datagovparent.css";
-
+import React from "react";
+import { Link } from "react-router-dom";
 function Datagovparent() {
     return (
         <div className="DATAGOVPARENT">
             <div className="div">
                 <div className="NAV">
-                  <div className="text-wrapper">govgr</div>
+                  <Link to="/" className="text-wrapper">govgr</Link>
         
                   <div className="navbar">
-                        <div className="text-wrapper-2">ΑΡΧΙΚΗ</div>
+                    <Link to="/" className="text-wrapper-2">ΑΡΧΙΚΗ</Link>
             
-                        <div className="text-wrapper-2">Η ΔΡΑΣΗ</div>
-            
-                        <div className="text-wrapper-2">ΓΟΝΕΑΣ</div>
-            
-                        <div className="text-wrapper-2">ΝΤΑΝΤΑ</div>
-            
-                        <div className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</div>
-            
-                        <div className="frame">
-                            <div className="overlap-group">
-                                <div className="text-wrapper-3">ΣΥΝΔΕΣΗ</div>
-                            </div>
+                    <Link to="/drash" className="text-wrapper-2">Η ΔΡΑΣΗ</Link>
+
+                    <Link to="/goneas" className="text-wrapper-2">ΓΟΝΕΑΣ</Link>
+
+                    <Link to="/ntanta" className="text-wrapper-2">ΝΤΑΝΤΑ</Link>
+
+                    <Link to="/" className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</Link>
+
+                    <div className="frame">
+                        <div className="overlap-group">
+                            <Link to="/login" className="text-wrapper-3">ΣΥΝΔΕΣΗ</Link>
                         </div>
                     </div>
+                 </div>
                 </div>
             </div>
             <div className="overlap-group-wrapper">
@@ -126,7 +127,7 @@ function Datagovparent() {
                 
                 <div className="overlap-group-wrapper2">
                 <div className="overlap-group-21">
-                    <div className="text-wrapper-7"> Συνέχεια </div>
+                    <Link to="/profileparent" className="text-wrapper-7">Συνέχεια</Link>
                 </div>
 
                     <div className="text-wrapper-8"> Στοιχεία Τέκνου</div>

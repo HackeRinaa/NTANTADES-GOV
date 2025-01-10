@@ -1,26 +1,27 @@
 import "./completedmessage.css";
-
+import React from "react";
+import { Link } from "react-router-dom";
 function Completedmessage() {
     return (
         <div className="COMPLETEDMESSAGE">
             <div className="div">
                 <div className="NAV">
-                  <div className="text-wrapper">govgr</div>
+                  <Link to="/" className="text-wrapper">govgr</Link>
         
                   <div className="navbar">
-                        <div className="text-wrapper-2">ΑΡΧΙΚΗ</div>
+                        <Link to="/" className="text-wrapper-2">ΑΡΧΙΚΗ</Link>
             
-                        <div className="text-wrapper-2">Η ΔΡΑΣΗ</div>
+                        <Link to="/drash" className="text-wrapper-2">Η ΔΡΑΣΗ</Link>
             
-                        <div className="text-wrapper-2">ΓΟΝΕΑΣ</div>
+                        <Link to="/goneas" className="text-wrapper-2">ΓΟΝΕΑΣ</Link>
             
-                        <div className="text-wrapper-2">ΝΤΑΝΤΑ</div>
+                        <Link to="/ntanta" className="text-wrapper-2">ΝΤΑΝΤΑ</Link>
             
-                        <div className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</div>
+                        <Link to="/" className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</Link>
             
                         <div className="frame">
                             <div className="overlap-group">
-                                <div className="text-wrapper-3">ΣΥΝΔΕΣΗ</div>
+                            <Link to="/login" className="text-wrapper-3">ΣΥΝΔΕΣΗ</Link>
                             </div>
                         </div>
                     </div>
@@ -40,11 +41,11 @@ function Completedmessage() {
              
             <div className="overlap-group-wrapper2">
                 <div className="overlap-group-3">
-                    <div className="text-wrapper-6"> Πίσω </div>
+                <Link to="/" className="text-wrapper-6">Πίσω</Link>
                 </div>
 
                 <div className="overlap-group-4">
-                    <div className="text-wrapper-7"> Το Προφίλ σας </div>
+                <Link to="/profileparent" className="text-wrapper-7">Το Προφίλ σας</Link>
                 </div>
             </div>
 

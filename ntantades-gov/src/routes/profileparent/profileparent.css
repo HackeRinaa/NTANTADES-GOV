@@ -57,6 +57,11 @@
     width: fit-content;
   }
   
+  
+  .PROFILEPARENT .text-wrapper-2:hover {
+    color: #e9631a; 
+  }
+
   .PROFILEPARENT .frame {
     height: 43px;
     position: relative;

@@ -1,35 +1,36 @@
 import "./cvoverlay.css";
-
+import React from "react";
+import { Link } from "react-router-dom";
 function Cvoverlay() {
     return (
         <div className="CVOVERLAY">
             <div className="div">
                 <div className="NAV">
-                  <div className="text-wrapper">govgr</div>
+                 <Link to="/" className="text-wrapper">govgr</Link>
         
                   <div className="navbar">
-                        <div className="text-wrapper-2">ΑΡΧΙΚΗ</div>
+                    <Link to="/" className="text-wrapper-2">ΑΡΧΙΚΗ</Link>
             
-                        <div className="text-wrapper-2">Η ΔΡΑΣΗ</div>
-            
-                        <div className="text-wrapper-2">ΓΟΝΕΑΣ</div>
-            
-                        <div className="text-wrapper-2">ΝΤΑΝΤΑ</div>
-            
-                        <div className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</div>
-            
-                        <div className="frame">
-                            <div className="overlap-group">
-                                <div className="text-wrapper-3">ΣΥΝΔΕΣΗ</div>
-                            </div>
+                    <Link to="/drash" className="text-wrapper-2">Η ΔΡΑΣΗ</Link>
+
+                    <Link to="/goneas" className="text-wrapper-2">ΓΟΝΕΑΣ</Link>
+
+                    <Link to="/ntanta" className="text-wrapper-2">ΝΤΑΝΤΑ</Link>
+
+                    <Link to="/" className="text-wrapper-2">ΕΠΙΚΟΙΝΩΝΙΑ</Link>
+
+                    <div className="frame">
+                        <div className="overlap-group">
+                            <Link to="/login" className="text-wrapper-3">ΣΥΝΔΕΣΗ</Link>
                         </div>
+                    </div>
                     </div>
                 </div>
 
 
                 <div className="overlap-group-wrapper">
                 <div className="overlap-group-2">
-                    <div className="text-wrapper-6"> Κλείστε Ραντεβού </div>
+                    <Link to="/appointment" className="text-wrapper-6">Κλείστε Ραντεβού</Link>
                 </div>
                 </div>
 
@@ -89,7 +90,7 @@ function Cvoverlay() {
     
                 <div className="overlap-group-wrapper3">
                 <div className="overlap-group-4">
-                    <div className="text-wrapper-10">  Πίσω </div>
+                    <Link to="/" className="text-wrapper-10">Πίσω</Link>
                 </div>
                 </div>
 
