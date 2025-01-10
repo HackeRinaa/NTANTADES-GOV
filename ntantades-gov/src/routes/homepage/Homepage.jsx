@@ -1,23 +1,10 @@
+import NavBar from "../../components/navBar/NavBar";
 import "./homepage.css";
 
 function Homepage() {
   return (
     <div className="HERO-SECTION"> 
-      <div className="NAV">
-        <div className="logo">
-          govgr
-        </div>
-        <div className="navbar">
-          <a className="nav-link" href="#home">ΑΡΧΙΚΗ</a>
-          <a className="nav-link" href="#drash">Η ΔΡΑΣΗ</a>
-          <a className="nav-link" href="#goneas">ΓΟΝΕΑΣ</a>
-          <a className="nav-link" href="#ntanta">ΝΤΑΝΤΑ</a>
-          <a className="nav-link" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-          <div className="auth-button">
-            <button className="login-btn" href="#sindesi">ΣΥΝΔΕΣΗ</button>
-          </div>
-        </div>
-      </div>
+      <NavBar/>
       <div className="container">
         <div className="column">
           <div className="headers">

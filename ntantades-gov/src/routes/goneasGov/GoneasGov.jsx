@@ -1,3 +1,4 @@
+import NavBar from "../../components/navBar/NavBar";
 import "./goneasGov.css";
 import { useRef } from "react";
 
@@ -13,23 +14,7 @@ function GoneasGov() {
 
   return (
     <div className='GoneasGov'>
-        <div className="div">
-            <div className="NAV">
-                <div className="text-wrapper-3">govgr</div>
-                <div className="navbar">
-                    <a className="text-wrapper-4" href="#home">ΑΡΧΙΚΗ</a>
-                    <a className="text-wrapper-4" href="#drash">Η ΔΡΑΣΗ</a>
-                    <a className="text-wrapper-4" href="#goneas">ΓΟΝΕΑΣ</a>
-                    <a className="text-wrapper-4" href="#ntanta">ΝΤΑΝΤΑ</a>
-                    <a className="text-wrapper-4" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-                    <div className="frame">
-                        <div className="overlap-group">
-                            <a className="text-wrapper-5" href="#sindesi">ΣΥΝΔΕΣΗ</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <NavBar/>
         <div className="container">
             <div className="data-1">
                 <p className="header">Ελεγχος Στοιχείων</p>
