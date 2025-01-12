@@ -18,6 +18,8 @@ import SelectNanny from './routes/selectNanny/SelectNanny';
 import ParentProfile from './routes/parentProfile/ParentProfile';
 import NtantaProfile from './routes/ntantaProfile/NtantaProfile';
 import Ratings from './routes/ratings/Ratings';
+import Requests from './routes/requests/Requests';
+import Contracts from './routes/contracts/Contracts';
 
 const router = createBrowserRouter([
   {
@@ -81,8 +83,16 @@ const router = createBrowserRouter([
     element: <NtantaProfile/>,
   },
   {
+    path: '/requests',
+    element: <Requests/>,
+  },
+  {
     path: '/ratings',
     element: <Ratings/>,
+  },
+  {
+    path: '/contracts',
+    element: <Contracts/>,
   },
 ]);
 
