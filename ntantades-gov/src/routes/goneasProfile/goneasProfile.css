@@ -4,8 +4,9 @@
   height: 1024px;
   padding: 10px;
   box-sizing: border-box;
-}
 
+
+  
   
   .profile-completion-container {
     width: 80%;
@@ -112,3 +113,4 @@
   
   }
   
+}

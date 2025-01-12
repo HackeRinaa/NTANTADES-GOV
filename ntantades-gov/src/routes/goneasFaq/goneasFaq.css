@@ -1,168 +1,90 @@
 .GoneasFaq {
-    background-color: #fff9f2;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
+  background-color: #fff9f2;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
 
-.GoneasFaq .div {
-    background-color: #fff9f2;
-    height: 1024px;
-    position: relative;
-    width: 1440px;
-  }
-  
-  .GoneasFaq .NAV {
-    align-items : center;
+  .main-container {
     display: flex;
-    height: 65px;
-    justify-content: space-between;
-    left: 30px;
-    position: absolute;
-    top: 30px;
-    width: 1380px;
-  }
-  
-  .GoneasFaq .text-wrapper-3 {
-    color: #e9631a;
-    font-family: 'Roboto-Light', Helvetica;
-    font-size: 50px;
-    font-weight: 300;
-    letter-spacing: 0;
-    line-height: normal;
-    position: relative;
-    text-shadow: 0px 2px 2px #b58d8d;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .GoneasFaq .navbar {
     align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 32px;
+    justify-content: space-between;
+  }
+
+
+  .headers-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1;
+    margin-top: 50px;
+    margin-left: 40px;
+    max-width: 756px;
+    width: 100%;
+  }
+
+  .title {
+      color: #4a4e69;
+      font-size: 64px;
+      font-weight: 500;
+      text-align: center;
+    }
+    
+  .sub-title {
+      color: #4a4e69; 
+      font-size: 20px;
+      font-weight: 200;
+      text-align: center;
+  }
+
+
+  .container-faq {
+    width: 756px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .question {
+    min-height: 41px;
+    width: 756px;
     position: relative;
   }
-  
-  .GoneasFaq .text-wrapper-4 {
-    color: #4a4e69;
-    font-family: "Roboto-SemiBold",  Helvetica;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: normal;
-    position: relative;
-    text-decoration: none; /* Ensure links are not underlined */
-    transition: color 0.3s; /* Add transition for hover effect */
-  }
-  
-  .GoneasFaq .text-wrapper-4:hover {
-    color: #e9631a; /* Change color on hover */
-  }
-  
-  .GoneasFaq .frame {
-    height: 43px;
-    position: relative;
-    width: 150px;
-  }
-  
-  .GoneasFaq .overlap-group {
-    background-color: #a8d5ba;
-    border: 1px solid;
-    border-color: #6a9d7e;
-    border-radius: 15px;
-    box-shadow: 0px 4px 4px #00000040;
-    height: 40px;
-    position: relative; 
-  }
-  
-  .GoneasFaq .text-wrapper-5 {
-    color: #ffffff;
-    font-family: "Roboto-SemiBold",  Helvetica;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0;
-    left: 29px;
-    line-height: normal;
-    position: absolute;
-    top: 8px;
-    white-space: nowrap;
+
+  .question-header {
+    display: flex;
+    justify-content: space-between; /* Align question text and arrow */
+    cursor: pointer; /* Change cursor to pointer for better UX */
   }
 
-.GoneasFaq .text-text-wrapper-4-2 {
-    color: #4a4e69;
-    font-size: 36px;
-    font-weight: 500;
-    position: absolute;
-    left: 40%;
-    letter-spacing: 0;
-    line-height: normal;
-    top: 261px;
-    white-space: nowrap;
-}
-
-.GoneasFaq .p {
+  .text-wrapper-5-2 {
     color: #4a4e69;
     font-size: 20px;
-    font-weight: 300;
-    position: absolute;
-    left: 31%;
-    letter-spacing: 0;
-    line-height: normal;
-    text-align: center;
-    top: 333px;
-}
+    font-weight: 400;
+    margin: 0; /* Remove margin to avoid extra space */
+  }
 
-.GoneasFaq .container {
-  position: absolute; 
-  top: 410px;
-  left: 29%;
-  width: 756px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+  .upload {
+    height: 16px;
+    width: 16px;
+    transition: transform 0.3s ease; /* Add transition for smooth rotation */
+  }
 
-.GoneasFaq .question {
-  min-height: 41px;
-  width: 756px;
-  position: relative;
-}
+  .upload.rotated {
+    transform: rotate(180deg); /* Rotate the arrow when expanded */
+  }
 
-.GoneasFaq .question-header {
-  display: flex;
-  justify-content: space-between; /* Align question text and arrow */
-  cursor: pointer; /* Change cursor to pointer for better UX */
-}
+  .question hr {
+    color: #4a4e69;
+    display: block;
+    height: 1px;
+    width: 756px;
+  }
 
-.GoneasFaq .text-wrapper-5-2 {
-  color: #4a4e69;
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0; /* Remove margin to avoid extra space */
-}
-
-.GoneasFaq .upload {
-  height: 16px;
-  width: 16px;
-  transition: transform 0.3s ease; /* Add transition for smooth rotation */
-}
-
-.GoneasFaq .upload.rotated {
-  transform: rotate(180deg); /* Rotate the arrow when expanded */
-}
-
-.GoneasFaq .question hr {
-  color: #4a4e69;
-  display: block;
-  height: 1px;
-  width: 756px;
-}
-
-.GoneasFaq .text-wrapper-7 {
-  color: #4a4e69;
-  display: block;
-  margin-top: 10px; /* Add some space above the answer */
-  transition: max-height 0.3s ease; /* Optional: Add transition for the text */
+  .text-wrapper-7 {
+    color: #4a4e69;
+    display: block;
+    margin-top: 10px; /* Add some space above the answer */
+    transition: max-height 0.3s ease; /* Optional: Add transition for the text */
+  }
 }

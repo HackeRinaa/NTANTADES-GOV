@@ -4,9 +4,8 @@
   height: 100vh;
   padding: 10px;
   box-sizing: border-box;
-}
 
-
+  
 
 .container {
   display: flex;
@@ -87,3 +86,5 @@
     width: 567px;
   }
   
+}
+

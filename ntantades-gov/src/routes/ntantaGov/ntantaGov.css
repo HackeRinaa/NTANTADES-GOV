@@ -4,8 +4,9 @@
   height: 1024px;
   padding: 10px;
   box-sizing: border-box;
-}
 
+
+  
   .NtantaGov .container {
     display: flex;
     align-items: center;
@@ -116,3 +117,5 @@
       transition: 1s ease;
     }
   }
+
+}

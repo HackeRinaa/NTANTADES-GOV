@@ -7,7 +7,7 @@ function Ntanta() {
         <NavBar/>
         <div className="container">
 
-          <div className="headers">
+          <div className="headers-ntanta">
             <h2 className="title">Θες να γίνεις Νταντά;</h2>
 
             <p className="sub-title">

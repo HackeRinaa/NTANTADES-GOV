@@ -1,3 +1,4 @@
+import NavBar from "../../components/navBar/NavBar";
 import "./goneasFaq.css";
 import { useState } from "react";
 
@@ -30,32 +31,18 @@ function GoneasFaq() {
 
   return (
     <div className='GoneasFaq'>
-        <div className="div">
-            <div className="NAV">
-                <div className="text-wrapper-3">govgr</div>
-                <div className="navbar">
-                    <a className="text-wrapper-4" href="#home">ΑΡΧΙΚΗ</a>
-                    <a className="text-wrapper-4" href="#drash">Η ΔΡΑΣΗ</a>
-                    <a className="text-wrapper-4" href="#goneas">ΓΟΝΕΑΣ</a>
-                    <a className="text-wrapper-4" href="#ntanta">ΝΤΑΝΤΑ</a>
-                    <a className="text-wrapper-4" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-                    <div className="frame">
-                        <div className="overlap-group">
-                            <a className="text-wrapper-5" href="#sindesi">ΣΥΝΔΕΣΗ</a>
-                        </div>
-                    </div>
-                </div>
+        <NavBar/>
+        <div className="main-container">
+            <div className="headers-faq">
+                <h1 className="title">Συχνές Ερωτήσεις</h1>
+                <p className="sub-title">
+                    Αυτές είναι μερικές απο τις πιο συχνές ερωτήσεις.
+                    <br />
+                    Αν έχετε επιπλέον ερωτήσεις επικοινωνήστε με το κέντρο επικοινωνίας.
+                </p>
             </div>
-        </div>
 
-        <div className="text-text-wrapper-4-2">Συχνές Ερωτήσεις</div>
-
-        <p className="p">
-            Αυτές είναι μερικές απο τις πιο συχνές ερωτήσεις.
-            <br />
-            Αν έχετε επιπλέον ερωτήσεις επικοινωνήστε με το κέντρο επικοινωνίας.
-        </p>
-        <div className="container">
+            <div className="container-faq">
             {questions.map((item, index) => (
                 <div className="question" key={index}>
                     <div className="question-header" onClick={() => toggleQuestion(index)}>
@@ -77,6 +64,8 @@ function GoneasFaq() {
                 </div>
             ))}
         </div>
+        </div>
+
     </div>
   );
 };

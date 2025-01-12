@@ -5,9 +5,9 @@ function Homepage() {
   return (
     <div className="HERO-SECTION"> 
       <NavBar/>
-      <div className="container">
+      <div className="container-hero">
         <div className="column">
-          <div className="headers">
+          <div className="headers-hero">
             <h1 className="title">
               Νταντάδες της <br />
               Γειτονιάς
@@ -17,7 +17,7 @@ function Homepage() {
               από 2 μηνών έως 2,5 ετών
             </p>
           </div>
-          <div className="btn-selection">
+          <div className="btn-selection-hero">
             <h2 className="option">Eίμαι :</h2>
             <div className="btns">
               <button className="activeBtn">Γονέας</button>
@@ -26,12 +26,12 @@ function Homepage() {
           </div>
         </div>
         <div className="column">
-          <div className="wrapper">
+          <div className="wrapper-hero">
             <div className="lines">
               <div className="line-1"></div>
               <div className="line-2"></div>
             </div>
-            <div className="picture">
+            <div className="picture-hero">
               <div className="rectangle"></div>
               <div className="rectangle-2"></div>
               <img className="image" alt="image" src="/main.png" />
