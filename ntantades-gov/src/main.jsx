@@ -16,6 +16,8 @@ import GoneasProfile from './routes/goneasProfile/GoneasProfile';
 import Appointment from './routes/appointment/Appointment';
 import SelectNanny from './routes/selectNanny/SelectNanny';
 import ParentProfile from './routes/parentProfile/ParentProfile';
+import NtantaProfile from './routes/ntantaProfile/NtantaProfile';
+import Ratings from './routes/ratings/Ratings';
 
 const router = createBrowserRouter([
   {
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
   {
     path: '/profile-parent',
     element: <ParentProfile/>,
+  },
+  {
+    path: '/profile-ntanta',
+    element: <NtantaProfile/>,
+  },
+  {
+    path: '/ratings',
+    element: <Ratings/>,
   },
 ]);
 

@@ -1,20 +1,20 @@
 import NavBar from "../../components/navBar/NavBar";
-import "./parentProfile.css";
+import "./ntantaProfile.css";
 
-function ParentProfile() {
+function NtantaProfile() {
   return (
-    <div className="ParentProfile">
+    <div className="NtantaProfile">
       <NavBar/>
       <div className="main-container-profile">
         <div className="profile-container">
             <h2 className="title">Το Προφίλ μου</h2>
             <div className="row-info">
-              <img src="/parent.png" className="profile-pic" alt="" />
+              <img src="/girl.png" className="profile-pic" alt="" />
               <div className="container-info-profile">
-                <h3>Μαρία Παπαγεωργίου</h3>
+                <h3>Σοφία Παπαγεωργίου</h3>
                 <div className="lines">
                   <img src="/mail.png" className="icon" alt="mail icon" />
-                  <p>maria.papageorgiou@gmail.com</p>
+                  <p>sofia.papageo@gmail.com</p>
                 </div>
                 <div className="lines">
                   <img src="/phone-call.png" className="icon" alt="phone icon" />
@@ -24,11 +24,7 @@ function ParentProfile() {
               </div>
             </div>
             <div className="row-info">
-              <p className="details">Είμαστε εργαζόμενοι γονείς με ένα 2χρονο κοριτσάκι 
-                και χρειαζόμαστε φύλαξη τις πρωινές ώρες
-                (9:00-17:00) από Δευτέρα έως Παρασκευή.
-                Αναζητούμε έναν/μία φροντιστή που
-                να είναι στοργικός/ή και υπεύθυνος/η.
+              <p className="details">Γεια σας! Ονομάζομαι Σοφία, είμαι 23 ετών και λατρεύω να δουλεύω με παιδιά.Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς
               </p>
             </div>
             <div className="row-info">
@@ -47,4 +43,4 @@ function ParentProfile() {
   )
 }
 
-export default ParentProfile;
+export default NtantaProfile;
