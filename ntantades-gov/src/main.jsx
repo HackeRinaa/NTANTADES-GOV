@@ -15,6 +15,7 @@ import GoneasGov from './routes/goneasGov/GoneasGov';
 import GoneasProfile from './routes/goneasProfile/GoneasProfile';
 import Appointment from './routes/appointment/Appointment';
 import SelectNanny from './routes/selectNanny/SelectNanny';
+import ParentProfile from './routes/parentProfile/ParentProfile';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: '/select-nanny',
     element: <SelectNanny/>,
+  },
+  {
+    path: '/profile-parent',
+    element: <ParentProfile/>,
   },
 ]);
 
