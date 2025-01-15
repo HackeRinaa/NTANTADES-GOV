@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./homepage.css";
 
 function Homepage() {
+  const navigate = useNavigate();
+
   return (
     <div className="HERO-SECTION"> 
       <NavBar/>
@@ -20,8 +23,8 @@ function Homepage() {
           <div className="btn-selection-hero">
             <h2 className="option">Eίμαι :</h2>
             <div className="btns">
-              <button className="activeBtn">Γονέας</button>
-              <button className="activeBtn">Νταντά</button>
+              <button className="activeBtn" onClick={() => navigate('/goneas')}>Γονέας</button>
+              <button className="activeBtn"  onClick={() => navigate('/ntanta')}>Νταντά</button>
             </div>
           </div>
         </div>

@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom"
 import NavBar from "../../components/navBar/NavBar"
 import "./cvTemplate.css"
 
 function CvTemplate() {
+  const navigate = useNavigate();
+
   return (
     <div className="CvTemplate">
         <NavBar/>
@@ -47,7 +50,7 @@ function CvTemplate() {
             <div className="main-pic">
                 <img src="/image 6.png" alt="" />
             </div>
-            <button className="complete-button">Ολοκλήρωση</button>
+            <button className="complete-button" onClick={() => navigate('/profile-ntanta')}>Ολοκλήρωση</button>
         </div>
     </div>
 

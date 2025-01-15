@@ -21,6 +21,12 @@ import Ratings from './routes/ratings/Ratings';
 import Requests from './routes/requests/Requests';
 import Contracts from './routes/contracts/Contracts';
 import ChatPage from './routes/chat/Chat';
+import Voucher from './routes/voucher/Voucher';
+import CalendarPage from './routes/calendar/CalendarPage';
+import Contact from './routes/contact/Contact';
+import Neighborhood from './routes/neighborhood/Neighborhood';
+import Success from './routes/success/Success';
+import Login from './routes/login/Login';
 
 const router = createBrowserRouter([
   {
@@ -98,6 +104,30 @@ const router = createBrowserRouter([
   {
     path: '/chat',
     element: <ChatPage/>,
+  },
+  {
+    path: '/voucher',
+    element: <Voucher/>,
+  },
+  {
+    path: '/calendar',
+    element: <CalendarPage/>,
+  },
+  {
+    path: '/contact',
+    element: <Contact/>,
+  },
+  {
+    path: '/select-neighborhood',
+    element: <Neighborhood/>
+  },
+  {
+    path: '/success',
+    element: <Success/>
+  },
+  {
+    path: '/login',
+    element: <Login/>
   },
 ]);
 

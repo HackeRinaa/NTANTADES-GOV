@@ -1,16 +1,35 @@
 import { useState } from "react";
-import "./appointment.css";
+import "./calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from "../../components/navBar/NavBar";
 import { useNavigate } from "react-router-dom";
 
 
-function Appointment() {
+function CalendarPage() {
   const navigate = useNavigate();
-    // State for selected date and time
+
+  const CalendarData = [
+    {
+      id: 1,
+      time: "9:00",
+      date: "Ραντεβού με Παπαδοπούλου Μαρία"
+    },
+    {
+      id: 2,
+      time: "10:00",
+      date: "Ραντεβού με Χριστοδούλου Μάρκος"
+    },
+    {
+      id: 3,
+      time: "12:00",
+      date: "Ραντεβού με Κωνσταντινίδη"
+    },
+  ]
+  
   const [selectedDate, setSelectedDate] = useState(null);
-  const [availableTimes] = useState(["9:00", "9:30", "11:00", "13:00", "17:00"]); // Dummy time data
+
+
   const [selectedTime, setSelectedTime] = useState("");
 
   // Handle date selection
@@ -24,10 +43,13 @@ function Appointment() {
   };
 
   return (
-    <div className="Appointment">
+    <div className="Calendar">
         <NavBar />
-        <div className="appointment-container">
-        <h2>Κλείσε το Online Ραντεβού σου Τώρα</h2>
+        <div className="backbtn" onClick={() => navigate('/profile-ntanta')}>
+                <button className="btn">Το Προφίλ Μου</button>
+        </div>
+        <div className="calendar-container">
+        <h2>Το Ημερολόγιο Μου</h2>
 
         {/* Calendar Section */}
         <div className="calendar-section">
@@ -41,33 +63,25 @@ function Appointment() {
             {/* Time Section */}
             <div className="time-section">
             <h3>
-                Διαθέσιμες Ώρες: {selectedDate ? selectedDate.toLocaleDateString() : ""}
+                Ραντεβού : {selectedDate ? selectedDate.toLocaleDateString() : ""}
             </h3>
             <div className="time-options">
-                {availableTimes.map((time, index) => (
+                {CalendarData.map((date) => (
                 <button
-                    key={index}
-                    className={`time-button ${selectedTime === time ? "active" : ""}`}
-                    onClick={() => handleTimeSelection(time)}
+                    key={date.index}
+                    className={`time-button ${selectedTime === date.time ? "active" : ""}`}
+                    onClick={() => handleTimeSelection(date.time)}
                 >
-                    {time}
+                    {date.time} : {date.date}
                 </button>
                 ))}
             </div>
             </div>
         </div>
-
-        {/* Navigation Buttons */}
-        <div className="navigation-buttons">
-            <button className="back-button" onClick={() => navigate('/select-nanny')}>Πήγαινε Πίσω</button>
-            <button className={`continue-button ${selectedTime ? "active-btn" : ""}`} disabled={!selectedTime} onClick={() => navigate('/success')}>
-            Συνέχεια
-            </button>
-        </div>
-        </div>
+      </div>
 
     </div>
   )
 }
 
-export default Appointment;
+export default CalendarPage;

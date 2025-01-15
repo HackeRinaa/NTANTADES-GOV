@@ -7,7 +7,7 @@
 
 
   
-  .NtantaGov .container {
+  .container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,7 @@
     gap: 60px;
   }
 
-  .NtantaGov .data-1 {
+  .data-1 {
     flex: 1;
     max-width: 557px;
     height: auto;
@@ -94,7 +94,7 @@
     }
   }
 
-  .NtantaGov .box {
+  .box {
     height: 50px;
     width: 224px;
     position: absolute;

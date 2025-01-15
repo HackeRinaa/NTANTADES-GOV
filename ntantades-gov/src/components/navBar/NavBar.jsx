@@ -1,19 +1,22 @@
 import "./navBar.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+
   return (
     <div className="NavBar">
-        <div className="logo">
+        <div className="logo" onClick={() => navigate("/")}>
           govgr
         </div>
         <div className="navbar">
-          <a className="nav-link" href="#home">ΑΡΧΙΚΗ</a>
-          <a className="nav-link" href="#drash">Η ΔΡΑΣΗ</a>
-          <a className="nav-link" href="#goneas">ΓΟΝΕΑΣ</a>
-          <a className="nav-link" href="#ntanta">ΝΤΑΝΤΑ</a>
-          <a className="nav-link" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+          <Link className="nav-link" to="/">ΑΡΧΙΚΗ</Link>
+          <Link className="nav-link" to="/drash">Η ΔΡΑΣΗ</Link>
+          <Link className="nav-link" to="/goneas">ΓΟΝΕΑΣ</Link>
+          <Link className="nav-link" to="/ntanta">ΝΤΑΝΤΑ</Link>
+          <Link className="nav-link" to="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</Link>
           <div className="auth-button">
-            <button className="login-btn" href="#sindesi">ΣΥΝΔΕΣΗ</button>
+            <button className="login-btn" onClick={() => navigate("/login")}>ΣΥΝΔΕΣΗ</button>
           </div>
         </div>
     </div>

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./goneasProfile.css"
 
@@ -5,6 +6,9 @@ import "./goneasProfile.css"
 
 
 function GoneasProfile() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="GoneasProfile">
       <NavBar/>
@@ -50,7 +54,7 @@ function GoneasProfile() {
               <div className="main-pic">
                   <img src="/image 6.png" alt="" />
               </div>
-              <button className="complete-button">Ολοκλήρωση</button>
+              <button className="complete-button" onClick={() => navigate('/appointment')}>Ολοκλήρωση</button>
           </div>
     </div>
 

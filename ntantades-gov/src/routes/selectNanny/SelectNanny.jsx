@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './selectNanny.css';
 import NavBar from '../../components/navBar/NavBar';
+import { useNavigate } from 'react-router-dom';
 
 const SelectNanny = () => {
+    const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [selectedNanny, setSelectedNanny] = useState(null);
@@ -44,8 +46,8 @@ const SelectNanny = () => {
                 <div className="header-container">
                     <h1 className='title'>Γνώρισε τις Νταντάδες της Γειτονιάς σου</h1>
                     <div className="buttons">
-                        <button className='non-active'>Πήγαινε Πίσω</button>
-                        <button className='active'>Κλείσε Ραντεβού</button>   
+                        <button className='non-active' onClick={() => navigate('/select-neighborhood')}>Πήγαινε Πίσω</button>
+                        <button className='active' onClick={() => navigate('/login')}>Κλείσε Ραντεβού</button>   
                     </div>
 
                 </div>

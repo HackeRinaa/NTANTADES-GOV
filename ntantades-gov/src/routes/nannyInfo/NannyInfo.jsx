@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import FlippingCard from '../../components/flippingCard/FlippingCard';
+import NavBar from '../../components/navBar/NavBar';
 import "./nannyInfo.css";
 
 function NannyInfo() {
+    const navigate = useNavigate();
+
     const cardData = [
         {
             title: 'Τι θα χρειαστείς:',
@@ -25,21 +29,7 @@ function NannyInfo() {
 
     return (
         <div className="NannyInfo">
-            <div className="NAV">
-                <div className="logo">
-                    govgr
-                </div>
-                <div className="navbar">
-                    <a className="nav-link" href="#home">ΑΡΧΙΚΗ</a>
-                    <a className="nav-link" href="#drash">Η ΔΡΑΣΗ</a>
-                    <a className="nav-link" href="#goneas">ΓΟΝΕΑΣ</a>
-                    <a className="nav-link" href="#ntanta">ΝΤΑΝΤΑ</a>
-                    <a className="nav-link" href="#epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-                    <div className="auth-button">
-                        <button className="login-btn" href="#sindesi">ΣΥΝΔΕΣΗ</button>
-                    </div>
-                </div>
-            </div>
+            <NavBar/>
             <div className="main-container">
                 <div className="header">
                     <h1 className="title">Καλώς Ήρθες</h1>
@@ -50,7 +40,7 @@ function NannyInfo() {
                         <FlippingCard key={index} {...data} />
                     ))}
                 </div>
-                <button className="activeBtn">Εγγραφή</button>     
+                <button className="activeBtn" onClick={() => navigate('/ntanta-gov')}>Εγγραφή</button>     
             </div>
         </div>
     );

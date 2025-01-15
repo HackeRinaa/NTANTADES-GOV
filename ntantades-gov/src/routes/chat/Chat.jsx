@@ -2,11 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import "./chat.css";
 import EmojiPicker from "emoji-picker-react";
 import NavBar from "../../components/navBar/NavBar";
+import { useNavigate } from "react-router-dom";
 
 const Chat = () => {
+  const navigate = useNavigate();
+
   const dummyCurrentUser = { id: 1, username: "John Doe", avatar: "./goneas.png" };
   const dummyUser = { id: 2, username: "Jane Smith", avatar: "./goneas.png" };
-  const dummyChatId = "dummyChatId";
+  
 
   const [chat, setChat] = useState({
     messages: [
@@ -24,7 +27,6 @@ const Chat = () => {
 
   const currentUser = dummyCurrentUser;
   const user = dummyUser;
-  const chatId = dummyChatId;
 
   const isCurrentUserBlocked = false;
   const isReceiverBlocked = false;
@@ -72,7 +74,7 @@ const Chat = () => {
     <div className="chat-page">
       <NavBar />
       <div className="backbtn">
-          <button className="btn">Το Προφίλ Μου</button>
+          <button className="btn" onClick={() => navigate('/profile-ntanta')}>Το Προφίλ Μου</button>
       </div>
       <div className="chat">
         <div className="top">

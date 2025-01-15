@@ -1,10 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./ntantaGov.css";
 import { useRef } from "react";
 
 
 function NtantaGov() {
-
+    const navigate = useNavigate();
     const fileInputRef = useRef(null);
 
     const handleFileChange = (event) => {
@@ -216,7 +217,7 @@ function NtantaGov() {
             </div>
         </div>
         <div className="box">
-            <button className="btn">Συνέχεια</button>
+            <button className="btn" onClick={() => navigate('/cv-template')}>Συνέχεια</button>
         </div>
     </div>
   )

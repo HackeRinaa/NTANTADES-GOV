@@ -2,8 +2,10 @@ import { useCallback, useState } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "./contracts.css";
 import Canvas from "../../components/Canvas";
+import { useNavigate } from "react-router-dom";
 
 function Contracts() {
+    const navigate = useNavigate();
 
     const Contracts = [
         {
@@ -224,7 +226,7 @@ function Contracts() {
     <div className="Contracts">
         <NavBar/>
         <div className="backbtn">
-            <button className="btn">Το Προφίλ Μου</button>
+            <button className="btn" onClick={() => navigate('/profile-ntanta')}>Το Προφίλ Μου</button>
         </div>
         <div className="main-container-contracts">
             <div className="headers-con">

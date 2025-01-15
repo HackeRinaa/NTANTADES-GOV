@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./ntantaProfile.css";
 
 function NtantaProfile() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="NtantaProfile">
       <NavBar/>
@@ -32,11 +36,11 @@ function NtantaProfile() {
             </div>
         </div>
         <div className="options">
-          <button className="option">Τα Ραντεβού Μου</button>
-          <button className="option">Οι Αξιολογήσεις Μου</button>
-          <button className="option">Τα Μηνύματα Μου</button>
-          <button className="option">Τα Voucher Μου</button>
-          <button className="option">Ιστορικό Αιτήσεων και Συμφωνητικών</button>
+          <button className="option" onClick={() => navigate('/calendar')}>Τα Ραντεβού Μου</button>
+          <button className="option" onClick={() => navigate('/ratings')}>Οι Αξιολογήσεις Μου</button>
+          <button className="option" onClick={() => navigate('/chat')}>Τα Μηνύματα Μου</button>
+          <button className="option" onClick={() => navigate('/voucher')}>Τα Voucher Μου</button>
+          <button className="option" onClick={() => navigate('/contracts')}>Ιστορικό Αιτήσεων και Συμφωνητικών</button>
         </div>
       </div>
     </div>

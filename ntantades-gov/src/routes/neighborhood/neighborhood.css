@@ -1,0 +1,94 @@
+.Neighborhood {
+    background-color: #fff9f2;
+    width: 100%;
+    height: 1024px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .main-container-neigh {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 100px;
+        gap: 30px;
+
+        h1 {
+            font-size: 36px;
+            color: #4a4e69;
+            text-align: center;
+            font-weight: 800;
+        }
+
+.inputs-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 20px 0;
+  }
+  
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 24px;
+        font-weight: 400;
+        color: #4a4e69;
+    }
+  }
+  
+  .dropdown label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .dropdown select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-button {
+    height: 50px;
+    width: 224px;
+    background-color: #a8d5ba;
+    border: 1px solid #6a9d7e;
+    box-shadow: 0px 4px 4px #00000040;
+    border-radius: 15px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .search-button:hover {
+    background-color: #6a9d7e;
+    transition: 1s ease;
+  }
+  
+  .search-button:disabled {
+    background-color: #d9d9d9;
+    border: 1px solid #6a9d7e;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 50px;
+    width: 224px;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+    cursor: not-allowed;
+  }
+  
+  .illustration {
+    margin-top: 30px;
+  }
+  
+  .illustration img {
+    width: 600px;
+    height: auto;
+  }
+    }
+}

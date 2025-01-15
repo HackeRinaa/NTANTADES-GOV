@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./ntanta.css";
 
 function Ntanta() {
+  const navigate = useNavigate();
+
   return (
     <div className="NANNY">
         <NavBar/>
@@ -27,8 +30,8 @@ function Ntanta() {
               και υποβάλλε αίτησή σου online!
             </p>
             <div className="btns">
-              <button className="activeBtn">Συνέχεια</button>
-              <button className="activeBtn long">Συχνές Ερωτήσεις</button>
+              <button className="activeBtn" onClick={() => navigate('/ntanta-info')}>Συνέχεια</button>
+              <button className="activeBtn long" onClick={() => navigate('/ntanta-faq')}>Συχνές Ερωτήσεις</button>
             </div>
           </div>   
           <div className="image-container">

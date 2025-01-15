@@ -1,7 +1,10 @@
 import NavBar from "../../components/navBar/NavBar";
 import "./goneas.css";
+import { useNavigate } from "react-router-dom";
 
 function Goneas() {
+  const navigate = useNavigate();
+
   return (
     <div className="PARENT">
       <NavBar/>
@@ -28,8 +31,8 @@ function Goneas() {
                 και υποβάλλε αίτησή σου online!
               </p>
               <div className="btns">
-                <button className="activeBtn">Βρες Νταντά</button>
-                <button className="activeBtn long">Συχνές Ερωτήσεις</button>
+                <button className="activeBtn" onClick={() => navigate('/select-neighborhood')}>Βρες Νταντά</button>
+                <button className="activeBtn long" onClick={() => navigate('/goneas-faq')}>Συχνές Ερωτήσεις</button>
               </div>
         </div>   
         <img className="screenshot" alt="Screenshot" src="../public/goneas.png"/>
