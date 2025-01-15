@@ -27,6 +27,8 @@ import Contact from './routes/contact/Contact';
 import Neighborhood from './routes/neighborhood/Neighborhood';
 import Success from './routes/success/Success';
 import Login from './routes/login/Login';
+import ParentSignup from './routes/parentSignUp/ParentSignUp';
+import NannySignup from './routes/nannySignUp/NannySignUp';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
   {
     path: '/goneas-gov',
     element: <GoneasGov/>,
+  },
+  {
+    path: '/signup-parent',
+    element: <ParentSignup />,
+  },
+  {
+    path: '/signup-nanny',
+    element: <NannySignup />,
   },
   {
     path: '/goneas-profile',

@@ -47,7 +47,7 @@ const SelectNanny = () => {
                     <h1 className='title'>Γνώρισε τις Νταντάδες της Γειτονιάς σου</h1>
                     <div className="buttons">
                         <button className='non-active' onClick={() => navigate('/select-neighborhood')}>Πήγαινε Πίσω</button>
-                        <button className='active' onClick={() => navigate('/login')}>Κλείσε Ραντεβού</button>   
+                        <button className='active' onClick={() => navigate('/signup-parent')}>Κλείσε Ραντεβού</button>   
                     </div>
 
                 </div>

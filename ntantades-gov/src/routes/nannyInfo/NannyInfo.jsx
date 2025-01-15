@@ -40,7 +40,7 @@ function NannyInfo() {
                         <FlippingCard key={index} {...data} />
                     ))}
                 </div>
-                <button className="activeBtn" onClick={() => navigate('/ntanta-gov')}>Εγγραφή</button>     
+                <button className="activeBtn" onClick={() => navigate('/signup-nanny')}>Εγγραφή</button>     
             </div>
         </div>
     );
