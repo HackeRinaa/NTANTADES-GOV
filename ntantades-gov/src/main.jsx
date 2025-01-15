@@ -20,6 +20,7 @@ import NtantaProfile from './routes/ntantaProfile/NtantaProfile';
 import Ratings from './routes/ratings/Ratings';
 import Requests from './routes/requests/Requests';
 import Contracts from './routes/contracts/Contracts';
+import ChatPage from './routes/chat/Chat';
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
   {
     path: '/contracts',
     element: <Contracts/>,
+  },
+  {
+    path: '/chat',
+    element: <ChatPage/>,
   },
 ]);
 
