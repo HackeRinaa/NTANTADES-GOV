@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./goneasGov.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
+
 import { db } from "../../../backend/firebase";
+import { getAuth } from "firebase/auth";
 
 
 function GoneasGov() {
 
     const navigate = useNavigate();
-    const fileInputRef = useRef(null);
 
     
       // State to hold form data
@@ -48,29 +49,35 @@ function GoneasGov() {
         setFormData({ ...formData, birthDate: fullDate });
       };
 
-    const handleFileChange = (event) => {
-        const fileName = event.target.files[0] ? event.target.files[0].name : '';
-        console.log(fileName); // You can handle the file name as needed
-    };
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
     
-      const handleSubmit = async () => {
+
+
+    const handleSubmit = async () => {
         try {
-          const userId = "USER_ID"; // Replace with actual user ID from Firebase Auth
-          const userDoc = doc(db, "users", userId);
-    
-          // Save data to Firestore
-          await setDoc(userDoc, { parentDetails: formData }, { merge: true });
-    
-          // Navigate to the next page
-          navigate("/goneas-profile");
+            const auth = getAuth(); // Get Firebase Auth instance
+            const user = auth.currentUser; // Get the currently signed-in user
+            
+            if (!user) {
+                throw new Error("No user is signed in.");
+            }
+
+            const userId = user.uid; // Get the user's unique ID
+            const userDoc = doc(db, "users", userId);
+
+            await setDoc(userDoc, { parentDetails: formData }, { merge: true });
+
+            // Navigate to the next page
+            navigate("/goneas-profile");
         } catch (error) {
-          console.error("Error saving data:", error);
+            console.error("Error saving data:", error);
         }
-      };
+    };
+
+      
 
   return (
     <div className='GoneasGov'>
@@ -249,7 +256,7 @@ function GoneasGov() {
                 <div className="row">
                     <div className="column">
                     <label  className="fieldName" htmlFor="Relation">Σχέση Αιτούντος με Τέκνο :</label>
-                    <select id="relation" value={formData.relation} onChange={handleChange}>
+                    <select id="relation" value={formData.relation} onChange={(e) => setFormData({...formData, relation: e.target.value})}>
                         <option value="">Επιλέξτε σχέση</option>
                         <option value="morning">Γονέας</option>
                         <option value="afternoon">Κηδεμόνας</option>
@@ -260,18 +267,16 @@ function GoneasGov() {
                 <div className="row">
                     <div className="column">
                     <label className="fieldName" htmlFor="Proof">Επιλέξτε δικαιολογητικό γονικής μέριμνας :</label>
-                    <select id="proof">
+                    <select id="proof" value={formData.proof} onChange={(e) => setFormData({...formData, proof: e.target.value})}>
                         <option  value="">Επιλέξτε Δικαιολογητικό</option>
                         <option value="morning">Πιστοποιητικό Γέννησης</option>
                         <option value="afternoon">Διαβατήριο</option>
                         <option value="evening">Άλλο</option>
                     </select>
-                    <input className="input" 
+                    {/* <input className="input" 
                                 type="file"
                                 ref={fileInputRef}
-                                name="proof"
-                                value={formData.proof}
-                                onChange={handleFileChange}
+                                name="proofFile"
                                 style={{ display: 'none'}} 
                                 id="file-upload"
                         />
@@ -292,7 +297,7 @@ function GoneasGov() {
                             {fileInputRef.current && fileInputRef.current.files.length > 0
                                 ? fileInputRef.current.files[0].name
                                 : "Ανέβασε απο τον υπολογιστή σου"}
-                        </label>
+                        </label> */}
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import "./goneasProfile.css"
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../../backend/firebase";
+import { getAuth } from "firebase/auth";
 
 
 
@@ -17,7 +18,6 @@ function GoneasProfile() {
     phone: "",
     contactHours: "",
     notes: "",
-    profilePicture: null,
   });
 
 
@@ -25,23 +25,43 @@ function GoneasProfile() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, profilePicture: e.target.files[0] });
-  };
+  // const handleFileChange = async (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     try {
+  //       const storageRef = ref(storage, `profile-pictures/${file.name}`);
+  //       await uploadBytes(storageRef, file);
+  //       const downloadURL = await getDownloadURL(storageRef);
+  //       setFormData({ ...formData, profilePicture: downloadURL });
+  //       console.log("Profile picture uploaded successfully:", downloadURL);
+  //     } catch (error) {
+  //       console.error("Error uploading profile picture:", error);
+  //     }
+  //   }
+  // };
+  
 
   const handleSubmit = async () => {
-    try {
-      const userId = "USER_ID"; // Replace with actual user ID from Firebase Auth
-      const userDoc = doc(db, "users", userId);
-
-      // Save data to Firestore
-      await setDoc(userDoc, { profileDetails: formData }, { merge: true });
-
-      navigate("/appointment");
-    } catch (error) {
-      console.error("Error saving profile data:", error);
-    }
-  };
+          try {
+              const auth = getAuth(); // Get Firebase Auth instance
+              const user = auth.currentUser; // Get the currently signed-in user
+              
+              if (!user) {
+                  throw new Error("No user is signed in.");
+              }
+  
+              const userId = user.uid; // Get the user's unique ID
+              const userDoc = doc(db, "users", userId);
+  
+              await setDoc(userDoc, { parentDetails: formData }, { merge: true });
+  
+              // Navigate to the next page
+              navigate("/profile-parent");
+          } catch (error) {
+              console.error("Error saving data:", error);
+          }
+      };
+  
 
   return (
     <div className="GoneasProfile">
@@ -81,7 +101,7 @@ function GoneasProfile() {
 
           <div className="form-item">
             <label htmlFor="contact-hours">Ώρες Φύλαξης:</label>
-            <select id="contact-hours" value={formData.contactHours} onChange={handleChange}>
+            <select id="contact-hours" value={formData.contactHours} onChange={(e) => setFormData({...formData, contactHours: e.target.value })}>
               <option value="">Επιλέξτε ώρες</option>
               <option value="morning">Πρωί</option>
               <option value="afternoon">Απόγευμα</option>
@@ -101,7 +121,7 @@ function GoneasProfile() {
             ></textarea>
           </div>
 
-          <div className="form-item profile-picture">
+          {/* <div className="form-item profile-picture">
             <label htmlFor="profile-picture">Φωτογραφία Προφίλ:</label>
             <input 
               type="file" 
@@ -109,7 +129,7 @@ function GoneasProfile() {
               name="profile"
               onChange={handleFileChange}
             />
-          </div>
+          </div> */}
         </div>
 
           <div className="left-section">
