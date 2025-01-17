@@ -21,11 +21,11 @@ function Ratings() {
     const itemsPerSlide = 3; // Number of items to show per slide
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(ratings.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(ratings.length));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(ratings.length / itemsPerSlide)) % Math.ceil(ratings.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(ratings.length / itemsPerSlide)));
     };
   return (
     <div className="Ratings">

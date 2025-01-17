@@ -137,11 +137,11 @@ function Voucher() {
     const itemsPerSlide = 3; // Number of items to show per slide
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(filteredVouchers.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(filteredVouchers.length));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(filteredVouchers.length / itemsPerSlide)) % Math.ceil(filteredVouchers.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(filteredVouchers.length / itemsPerSlide)));
     };
 
     const handleItemClick = (nanny) => {

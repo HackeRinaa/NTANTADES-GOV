@@ -17,11 +17,11 @@ const Requests = () => {
     const itemsPerSlide = 3; // Number of items to show per slide
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)) % Math.ceil(nannies.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)));
     };
 
     return (

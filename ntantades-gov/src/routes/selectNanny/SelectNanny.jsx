@@ -24,7 +24,14 @@ const SelectNanny = () => {
                     where("municipality", "==", selectedMunicipality)
                 );
                 const querySnapshot = await getDocs(q);
-                const nanniesData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                const nanniesData = querySnapshot.docs.map(doc => {
+                    const nanny = doc.data();
+                    return {
+                        id: doc.id,
+                        ...nanny,
+                        image: nanny.image || '/profilePic.png',  // Use fallback image if no image exists
+                    };
+                });
                 setNannies(nanniesData);
             }
         };
@@ -35,11 +42,11 @@ const SelectNanny = () => {
     const itemsPerSlide = 3; // Number of items to show per slide
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)) % Math.ceil(nannies.length / itemsPerSlide));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)));
     };
 
     const handleItemClick = (nanny) => {
@@ -73,11 +80,11 @@ const SelectNanny = () => {
                                 <div className="row">
                                     <div className="column">
                                         <h2>Όνομα:</h2>
-                                        <p>{selectedNanny.name}</p>
+                                        <p>{selectedNanny.firstName}</p>
                                     </div>
                                     <div className="column">
                                         <h2>Επώνυμο:</h2>
-                                        <p>{selectedNanny.surname}</p>
+                                        <p>{selectedNanny.lastName}</p>
                                     </div>
                                 </div>
                                 <hr className='line'/>
@@ -104,7 +111,7 @@ const SelectNanny = () => {
                                 </div>
                                 <hr className='line'/>
                                 <div className="row">
-                                    < p className='note'>{selectedNanny.note}</p>
+                                    < p className='note'>{selectedNanny.notes}</p>
                                 </div>
                             </div>
                         </div>
@@ -119,8 +126,8 @@ const SelectNanny = () => {
                                 className="carousel-item"
                                 onClick={() => handleItemClick(nanny)}
                             >
-                                <img src={nanny.image} alt={`${nanny.name} ${nanny.surname}`} className="nanny-image" />
-                                <h3>{nanny.name} {nanny.surname}</h3>
+                                <img src={nanny.image} alt={`${nanny.firstName} ${nanny.lastName}`} className="nanny-image" />
+                                <h3>{nanny.firstName} {nanny.lastName}</h3>
                                 <p>{nanny.occupation}</p>
                             </div>
                         ))}
