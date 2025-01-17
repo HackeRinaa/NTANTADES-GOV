@@ -42,11 +42,11 @@ const SelectNanny = () => {
     const itemsPerSlide = 3; // Number of items to show per slide
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length / itemsPerSlide));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)) % Math.ceil(nannies.length / itemsPerSlide));
     };
 
     const handleItemClick = (nanny) => {
@@ -120,7 +120,7 @@ const SelectNanny = () => {
                 <div className="carousel-container">
                     <button className="arrow left" onClick={prevSlide}>❮</button>
                     <div className="carousel">
-                        {nannies.slice(currentIndex * itemsPerSlide, currentIndex * itemsPerSlide + itemsPerSlide).map((nanny) => (
+                        {nannies.slice(currentIndex * itemsPerSlide, (currentIndex + 1) * itemsPerSlide).map((nanny) => (
                             <div
                                 key={nanny.id}
                                 className="carousel-item"
