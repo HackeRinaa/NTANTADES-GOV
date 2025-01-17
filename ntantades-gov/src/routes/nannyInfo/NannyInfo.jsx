@@ -10,20 +10,20 @@ function NannyInfo() {
         {
             title: 'Τι θα χρειαστείς:',
             image: '/folder.png', // Replace with your image path
-            description: 'Make sure to gather all necessary materials.',
-            details: ['Item 1', 'Item 2', 'Item 3'],
+            description: 'Θα χρειαστείτε και τους κωδικούς σας στο TaxisNet',
+            details: ['Πιστοποιητικό Σπουδών', 'Πιστοποιητικό πρώτων βοηθειών', 'Αντίγραφο Ποινικού Μητρώου ' , 'Πιστοποιητικό υγείας'],
         },
         {
             title: 'Πως λειτουργεί:',
             image: '/gears.png', // Replace with your image path
-            description: 'Follow the instructions carefully.',
-            details: ['Step 1', 'Step 2', 'Step 3'],
+            description: 'Θα βρείτε αναλυτικές οδηγίες κατά τη διάρκεια της εγγραφής σας.',
+            details: ['Εγγραφείτε', 'Φτιάξτε το Προφίλ σας', 'Ξεκινήστε ως Νταντά'],
         },
         {
             title: 'Γιατί να συμμετάσχεις:',
             image: '/network.png', // Replace with your image path
-            description: 'Join us for a great experience.',
-            details: ['Benefit 1', 'Benefit 2', 'Benefit 3'],
+            description: 'Με τη συμμετοχή σας, κάνετε το πάθος σας για τη φροντίδα των παιδιών μια ουσιαστική και επαγγελματική δραστηριότητα.',
+            details: ['Ευκαιρίες Εργασίας', 'Ευελιξία', 'Συνεισφορά στην Κοινωνία'],
         },
     ];
 

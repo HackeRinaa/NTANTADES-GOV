@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import "./contact.css";
 import NavBar from "../../components/navBar/NavBar";
 
+
+
 function Contact() {
+  const navigate = useNavigate();
+
   return (
     <div className="Contact">
         <NavBar/>
@@ -13,8 +18,10 @@ function Contact() {
                 </h2>
             </div>
             <div className="row">
-                <button className="btn">ΠΗΓΑΙΝΕ ΠΙΣΩ</button>
-                <img src="/contact=img.png" alt="" />
+              <div className="btns">
+                <button className="activeBtn" onClick={() => navigate('/')}>ΠΗΓΑΙΝΕ ΠΙΣΩ</button>
+              </div>
+              <img src="/contact=img.png" alt="" />
             </div>
         </div>
     </div>

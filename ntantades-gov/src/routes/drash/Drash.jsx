@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./drash.css";
 
 export const HDrash = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-DRASH">
       <NavBar/>
@@ -26,8 +29,8 @@ export const HDrash = () => {
           <div className="btn-selection-drash">
             <h2 className="option">Eίμαι :</h2>
             <div className="btns">
-              <button className="activeBtn">Γονέας</button>
-              <button className="activeBtn">Νταντά</button>
+              <button className="activeBtn" onClick={() => navigate('/goneas')}>Γονέας</button>
+              <button className="activeBtn"  onClick={() => navigate('/ntanta')}>Νταντά</button>
             </div>
           </div>
         </div>
