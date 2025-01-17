@@ -135,13 +135,13 @@ function Voucher() {
     const [filter, setFilter] = useState("ολα"); // Filter state
 
     const itemsPerSlide = 3; // Number of items to show per slide
-
+ 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(filteredVouchers.length));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(filteredVouchers.length / itemsPerSlide));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(filteredVouchers.length / itemsPerSlide)));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(filteredVouchers.length / itemsPerSlide)) % Math.ceil(filteredVouchers.length / itemsPerSlide));
     };
 
     const handleItemClick = (nanny) => {

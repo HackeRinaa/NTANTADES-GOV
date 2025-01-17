@@ -17,15 +17,15 @@ function Ratings() {
 
 
     const [currentIndex, setCurrentIndex] = useState(0);
-
     const itemsPerSlide = 3; // Number of items to show per slide
+    const totalSlides = Math.ceil(ratings.length / itemsPerSlide);
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(ratings.length));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(ratings.length / itemsPerSlide)));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
     };
   return (
     <div className="Ratings">

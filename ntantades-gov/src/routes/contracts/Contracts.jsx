@@ -197,11 +197,11 @@ function Contracts() {
     const itemsPerSlide = 3; // Number of items to show per slide
 
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(Contracts.length));
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(Contracts.length / itemsPerSlide));
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(Contracts.length / itemsPerSlide)));
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(Contracts.length / itemsPerSlide)) % Math.ceil(Contracts.length / itemsPerSlide));
     };
 
     
