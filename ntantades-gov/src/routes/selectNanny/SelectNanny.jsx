@@ -1,22 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './selectNanny.css';
 import NavBar from '../../components/navBar/NavBar';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../../backend/firebase';
 
 const SelectNanny = () => {
     const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isOverlayVisible, setOverlayVisible] = useState(false);
     const [selectedNanny, setSelectedNanny] = useState(null);
+    const location = useLocation();
+    const { selectedRegion, selectedMunicipality } = location.state || {};
+    const [nannies, setNannies] = useState([]);
 
-    const nannies = [
-        { id: 1, name: 'Αλίκη', surname: 'Ιακωβίδου', occupation: 'Συνταξιούχος', image: '/grandma.png', age: 68, email: 'aliki.iak@gmail.com', phone: "6945678324", gender: 'Γυναίκα', note: "Γεια σας! Ονομάζομαι Σοφία, είμαι 21 ετών και λατρεύω να δουλεύω με παιδιά. Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς τρόπους να περνάμε τον χρόνο μας. Ανυπομονώ να σας γνωρίσω και να γίνω μέρος της καθημερινότητάς σας!" },
-        { id: 2, name: 'Γιάννης', surname: 'Παπαθανασίου', occupation: 'Καθηγητής Αγγλικών', image: '/boy.png', age: 26, email: 'john.pap@gmail.com', phone: "6975743523", gender: 'Άντρας',note: "Γεια σας! Ονομάζομαι Σοφία, είμαι 21 ετών και λατρεύω να δουλεύω με παιδιά. Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς τρόπους να περνάμε τον χρόνο μας. Ανυπομονώ να σας γνωρίσω και να γίνω μέρος της καθημερινότητάς σας!" },
-        { id: 3, name: 'Βασιλεία', surname: 'Παπαδοπούλου', occupation: 'Φοιτήτρια', image: '/girl.png', age: 23, email: 'vasileiapap@gmail.com', phone: "6976754357", gender: 'Γυναίκα', note: "Γεια σας! Ονομάζομαι Σοφία, είμαι 21 ετών και λατρεύω να δουλεύω με παιδιά. Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς τρόπους να περνάμε τον χρόνο μας. Ανυπομονώ να σας γνωρίσω και να γίνω μέρος της καθημερινότητάς σας!" },
-        { id: 4, name: 'Μαρία', surname: 'Παρθένη', occupation: 'Άνεργη', image: '/woman.jpg', age: 34, email: 'mariapartheni@gmail.com', phone: "6976743248", gender: 'Γυναίκα', note: "Γεια σας! Ονομάζομαι Σοφία, είμαι 21 ετών και λατρεύω να δουλεύω με παιδιά. Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς τρόπους να περνάμε τον χρόνο μας. Ανυπομονώ να σας γνωρίσω και να γίνω μέρος της καθημερινότητάς σας!" },
-        { id: 5, name: 'Νίκος', surname: 'Ρεγκούσης', occupation: 'Συνταξιούχος', image: '/grandpa.jpg', age: 69, email: 'nikreg@gmail.com', phone: "6976324512", gender: "Άντρας", note:  "Γεια σας! Ονομάζομαι Σοφία, είμαι 21 ετών και λατρεύω να δουλεύω με παιδιά. Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς τρόπους να περνάμε τον χρόνο μας. Ανυπομονώ να σας γνωρίσω και να γίνω μέρος της καθημερινότητάς σας!" },
-        { id: 6, name: 'Αγγελική', surname: 'Ρούσου', occupation: 'Νταντά', image: '/girl2.webp', age: 29, email: 'aggrousou@gmail.com', phone: "6976754567", gender: 'Γυναίκα', note: "Γεια σας! Ονομάζομαι Σοφία, είμαι 21 ετών και λατρεύω να δουλεύω με παιδιά. Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς τρόπους να περνάμε τον χρόνο μας. Ανυπομονώ να σας γνωρίσω και να γίνω μέρος της καθημερινότητάς σας!" },
-    ];
+    useEffect(() => {
+        const fetchNannies = async () => {
+            if (selectedRegion && selectedMunicipality) {
+                const nanniesRef = collection(db, "nannies");
+                const q = query(
+                    nanniesRef,
+                    where("region", "==", selectedRegion),
+                    where("municipality", "==", selectedMunicipality)
+                );
+                const querySnapshot = await getDocs(q);
+                const nanniesData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setNannies(nanniesData);
+            }
+        };
+
+        fetchNannies();
+    }, [selectedRegion, selectedMunicipality]);
 
     const itemsPerSlide = 3; // Number of items to show per slide
 
@@ -38,10 +52,9 @@ const SelectNanny = () => {
         setSelectedNanny(null);
     };
 
-
     return (
         <div className="SelectNanny">
-            <NavBar/>
+            <NavBar />
             <div className="main-container">
                 <div className="header-container">
                     <h1 className='title'>Γνώρισε τις Νταντάδες της Γειτονιάς σου</h1>
@@ -49,8 +62,8 @@ const SelectNanny = () => {
                         <button className='non-active' onClick={() => navigate('/select-neighborhood')}>Πήγαινε Πίσω</button>
                         <button className='active' onClick={() => navigate('/signup-parent')}>Κλείσε Ραντεβού</button>   
                     </div>
-
                 </div>
+
                 {isOverlayVisible && selectedNanny && (
                     <div className="overlay">
                         <div className="overlay-content">
@@ -91,7 +104,7 @@ const SelectNanny = () => {
                                 </div>
                                 <hr className='line'/>
                                 <div className="row">
-                                    <p className='note'>{selectedNanny.note}</p>
+                                    < p className='note'>{selectedNanny.note}</p>
                                 </div>
                             </div>
                         </div>
@@ -113,8 +126,7 @@ const SelectNanny = () => {
                         ))}
                     </div>
                     <button className="arrow right" onClick={nextSlide}>❯</button>
-
-            </div>    
+                </div>    
             </div>
         </div>
     );

@@ -2,6 +2,8 @@ import { useState } from "react";
 import NavBar from "../../components/navBar/NavBar";
 import "./neighborhood.css";
 import { useNavigate } from "react-router-dom";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../../backend/firebase";
 
 
 function Neighborhood() {
@@ -25,6 +27,21 @@ function Neighborhood() {
     "Νότια Προάστια": ["Γλυφάδα", "Καλλιθέα", "Άλιμος"],
     "Ανατολικά Προάστια": ["Παλλήνη", "Γέρακας", "Χολαργός"],
     "Δυτικά Προάστια": ["Περιστέρι", "Ίλιον", "Αιγάλεω"],
+  };
+
+  const handleSearch = async () => {
+    try {
+      // Save the selected region and municipality to Firestore
+      await addDoc(collection(db, "userSelections"), {
+        region,
+        municipality,
+        timestamp: new Date(),
+      });
+      // Navigate to SelectNanny with state
+      navigate('/select-nanny', { state: { selectedRegion: region, selectedMunicipality: municipality } });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   };
 
   return (
@@ -71,7 +88,7 @@ function Neighborhood() {
         </div>
         <button
             className="search-button"
-            onClick={() => navigate('/select-nanny')}
+            onClick={handleSearch}
             disabled={!region || !municipality} // Disable until both are selected
         >
             Βρες Νταντά
