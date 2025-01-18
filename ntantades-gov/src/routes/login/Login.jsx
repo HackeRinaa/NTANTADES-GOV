@@ -11,24 +11,28 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
+    event.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
+  
       // Fetch user role from Firestore
       const userDoc = await getDoc(doc(db, "users", user.uid));
-      const role = userDoc.data().role;
-
+      const role = userDoc.data()?.role;
+  
       if (role === "parent") {
         navigate("/profile-parent");
       } else if (role === "nanny") {
         navigate("/profile-ntanta");
+      } else {
+        alert("User role not defined.");
       }
     } catch (error) {
       alert("Login failed: " + error.message);
     }
   };
+  
 
   return (
     <div className="Login">
