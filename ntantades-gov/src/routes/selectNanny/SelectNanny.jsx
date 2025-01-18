@@ -2,8 +2,9 @@ import "./selectNanny.css";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { db } from "../../../backend/firebase";
+import { auth, db } from "../../../backend/firebase";
 import NavBar from "../../components/navBar/NavBar";
+import { onAuthStateChanged } from "firebase/auth";
 
 const SelectNanny = () => {
     const navigate = useNavigate();
@@ -69,6 +70,16 @@ const SelectNanny = () => {
         return displayedItems;
     };
 
+    const handleBookAppointment = () => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            navigate("/success"); // User is logged in
+          } else {
+            navigate("/login"); // Redirect to login page
+          }
+        });
+    };
+
     if (nannies.length === 0) {
         return <div>Loading...</div>;
     }
@@ -81,7 +92,7 @@ const SelectNanny = () => {
                     <h1 className="title">Γνώρισε τις Νταντάδες της Γειτονιάς σου</h1>
                     <div className="buttons">
                         <button className="non-active" onClick={handleOpenOverlay}>Δες Βιογραφικό</button>
-                        <button className="active" onClick={() => navigate('/signup-parent')}>Κλείσε Ραντεβού</button>
+                        <button className="active" onClick={handleBookAppointment}>Κλείσε Ραντεβού</button>
                     </div>
                 </div>
                 {isOverlayVisible && selectedNanny && (
