@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import './selectNanny.css';
-import NavBar from '../../components/navBar/NavBar';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '../../../backend/firebase';
+import "./selectNanny.css";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { db } from "../../../backend/firebase";
+import NavBar from "../../components/navBar/NavBar";
 
 const SelectNanny = () => {
     const navigate = useNavigate();
@@ -13,6 +13,7 @@ const SelectNanny = () => {
     const location = useLocation();
     const { selectedRegion, selectedMunicipality } = location.state || {};
     const [nannies, setNannies] = useState([]);
+    const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
     useEffect(() => {
         const fetchNannies = async () => {
@@ -24,33 +25,30 @@ const SelectNanny = () => {
                     where("municipality", "==", selectedMunicipality)
                 );
                 const querySnapshot = await getDocs(q);
-                const nanniesData = querySnapshot.docs.map(doc => {
-                    const nanny = doc.data();
-                    return {
-                        id: doc.id,
-                        ...nanny,
-                        image: nanny.image || '/profilePic.png',  // Use fallback image if no image exists
-                    };
-                });
+                const nanniesData = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
                 setNannies(nanniesData);
+
+                const nannyCount = nanniesData.length;
+                setItemsPerSlide(Math.min(3, nannyCount));
             }
         };
-
         fetchNannies();
     }, [selectedRegion, selectedMunicipality]);
 
-    const itemsPerSlide = 3; // Number of items to show per slide
-
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.ceil(nannies.length / itemsPerSlide));
+        setCurrentIndex((prev) => (prev + 1) % nannies.length); // Loop back to the beginning
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.ceil(nannies.length / itemsPerSlide)) % Math.ceil(nannies.length / itemsPerSlide));
+        setCurrentIndex((prev) => (prev - 1 + nannies.length) % nannies.length); // Loop back to the end
     };
 
-    const handleItemClick = (nanny) => {
-        setSelectedNanny(nanny);
+    const handleOpenOverlay = () => {
+        const centerIndex = (currentIndex + Math.floor(itemsPerSlide / nannies.length)) % nannies.length; // Center item
+        setSelectedNanny(nannies[centerIndex]);
         setOverlayVisible(true);
     };
 
@@ -59,18 +57,33 @@ const SelectNanny = () => {
         setSelectedNanny(null);
     };
 
+    const getDisplayedItems = () => {
+        const displayedItems = [];
+        const totalNannies = nannies.length;
+
+        for (let i = 0; i < itemsPerSlide; i++) {
+            const index = (currentIndex + i - Math.floor(itemsPerSlide / 2) + totalNannies) % totalNannies;
+            displayedItems.push(nannies[index]);
+        }
+
+        return displayedItems;
+    };
+
+    if (nannies.length === 0) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div className="SelectNanny">
             <NavBar />
             <div className="main-container">
                 <div className="header-container">
-                    <h1 className='title'>Γνώρισε τις Νταντάδες της Γειτονιάς σου</h1>
+                    <h1 className="title">Γνώρισε τις Νταντάδες της Γειτονιάς σου</h1>
                     <div className="buttons">
-                        <button className='non-active' onClick={() => navigate('/select-neighborhood')}>Πήγαινε Πίσω</button>
-                        <button className='active' onClick={() => navigate('/signup-parent')}>Κλείσε Ραντεβού</button>   
+                        <button className="non-active" onClick={handleOpenOverlay}>Δες Βιογραφικό</button>
+                        <button className="active" onClick={() => navigate('/signup-parent')}>Κλείσε Ραντεβού</button>
                     </div>
                 </div>
-
                 {isOverlayVisible && selectedNanny && (
                     <div className="overlay">
                         <div className="overlay-content">
@@ -80,14 +93,14 @@ const SelectNanny = () => {
                                 <div className="row">
                                     <div className="column">
                                         <h2>Όνομα:</h2>
-                                        <p>{selectedNanny.firstName}</p>
+                                        <p>{selectedNanny.name}</p>
                                     </div>
                                     <div className="column">
                                         <h2>Επώνυμο:</h2>
-                                        <p>{selectedNanny.lastName}</p>
+                                        <p>{selectedNanny.surname}</p>
                                     </div>
                                 </div>
-                                <hr className='line'/>
+                                <hr className="line" />
                                 <div className="row">
                                     <div className="column">
                                         <h2>Ηλικία:</h2>
@@ -98,7 +111,7 @@ const SelectNanny = () => {
                                         <p>{selectedNanny.email}</p>
                                     </div>
                                 </div>
-                                <hr className='line'/>
+                                <hr className="line" />
                                 <div className="row">
                                     <div className="column">
                                         <h2>Τηλέφωνο:</h2>
@@ -109,9 +122,9 @@ const SelectNanny = () => {
                                         <p>{selectedNanny.gender}</p>
                                     </div>
                                 </div>
-                                <hr className='line'/>
+                                <hr className="line" />
                                 <div className="row">
-                                    < p className='note'>{selectedNanny.notes}</p>
+                                    <p className="note">{selectedNanny.note}</p>
                                 </div>
                             </div>
                         </div>
@@ -119,21 +132,20 @@ const SelectNanny = () => {
                 )}
                 <div className="carousel-container">
                     <button className="arrow left" onClick={prevSlide}>❮</button>
-                    <div className="carousel">
-                        {nannies.slice(currentIndex * itemsPerSlide, (currentIndex + 1) * itemsPerSlide).map((nanny) => (
-                            <div
-                                key={nanny.id}
-                                className="carousel-item"
-                                onClick={() => handleItemClick(nanny)}
-                            >
-                                <img src={nanny.image} alt={`${nanny.firstName} ${nanny.lastName}`} className="nanny-image" />
-                                <h3>{nanny.firstName} {nanny.lastName}</h3>
-                                <p>{nanny.occupation}</p>
-                            </div>
+                    <div className="carousel" style={{ transform: `translateX(-${(currentIndex - Math.floor(itemsPerSlide / 2)) * (100 / itemsPerSlide)}%)` }}>
+                        {getDisplayedItems().map((nanny, index) => (
+                            nanny ? (
+                                <div key={nanny.id} className={`carousel-item ${index === Math.floor(itemsPerSlide / (nannies.length / (nannies.length / 3))) ? 'selected' : ''}`}>
+                                    <img src={nanny.image || '/public/profilePic.png'} alt={`${nanny.name} ${nanny.surname}`} className="nanny-image" />
+                                    <h3>{nanny.name} {nanny.surname}</h3>
+                                    <p>{nanny.occupation}</p>
+                                </div>
+                            ) : null
                         ))}
                     </div>
                     <button className="arrow right" onClick={nextSlide}>❯</button>
-                </div>    
+                </div>
+                <button className="non-active" onClick={() => navigate('/select-neighborhood')}>Πήγαινε Πίσω</button>
             </div>
         </div>
     );
