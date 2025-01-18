@@ -7,23 +7,32 @@ import { useNavigate } from "react-router-dom";
 const Chat = () => {
   const navigate = useNavigate();
 
-  const dummyCurrentUser = { id: 1, username: "John Doe", avatar: "./goneas.png" };
-  const dummyUser = { id: 2, username: "Jane Smith", avatar: "./goneas.png" };
-  
+  // Dummy current user and other user
+  const dummyCurrentUser = { id: 1, username: "Μαρία Ιωάννου", avatar: "./parent.png", role: "parent" }; // Change role to "nanny" for testing
+  const dummyUser = { id: 2, username: "Βασιλεία Παπαδοπούλου", avatar: "./girl.png" };
 
+  // Messages for parent and nanny
+  const parentMessages = [
+    { senderId: 1, text: "Γεια σας! Μπορούμε να προγραμματίσουμε μια συνάντηση;", createdAt: new Date() },
+    { senderId: 2, text: "Φυσικά! Ποια ώρα σας εξυπηρετεί;", createdAt: new Date() },
+    { senderId: 1, text: "Θα μπορούσε αύριο στις 5 το απόγευμα;", createdAt: new Date() },
+    { senderId: 2, text: "Φυσικά,που θα θέλατε να βρεθούμε;", createdAt: new Date() },
+  ];
+
+  const nannyMessages = [
+    { senderId: 1, text: "Καλησπέρα! Μπορώ να σας βοηθήσω με το πρόγραμμα;", createdAt: new Date() },
+    { senderId: 2, text: "Ναι, παρακαλώ! Τι ώρα θα χρειαστείτε βοήθεια;", createdAt: new Date() },
+    { senderId: 1, text: "Αύριο στις 3 το απόγευμα θα ήταν τέλεια.", createdAt: new Date() },
+  ];
+
+  // Set initial chat messages based on role
   const [chat, setChat] = useState({
-    messages: [
-      { senderId: 1, text: "Hello, how are you?", createdAt: new Date() },
-      { senderId: 2, text: "I'm good, thanks! How about you?", createdAt: new Date() },
-    ],
+    messages: dummyCurrentUser.role === "parent" ? parentMessages : nannyMessages,
   });
 
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
-  const [img, setImg] = useState({
-    file: null,
-    url: "",
-  });
+  const [img, setImg] = useState({ file: null, url: "" });
 
   const currentUser = dummyCurrentUser;
   const user = dummyUser;
@@ -74,7 +83,9 @@ const Chat = () => {
     <div className="chat-page">
       <NavBar />
       <div className="backbtn">
-          <button className="btn" onClick={() => navigate('/profile-ntanta')}>Το Προφίλ Μου</button>
+        <button className="btn" onClick={() => navigate("/profile-ntanta")}>
+          Το Προφίλ Μου
+        </button>
       </div>
       <div className="chat">
         <div className="top">
@@ -94,9 +105,7 @@ const Chat = () => {
         <div className="center">
           {chat?.messages?.map((message, index) => (
             <div
-              className={
-                message.senderId === currentUser?.id ? "message own" : "message"
-              }
+              className={message.senderId === currentUser?.id ? "message own" : "message"}
               key={index}
             >
               <div className="texts">
@@ -130,21 +139,13 @@ const Chat = () => {
           </div>
           <input
             type="text"
-            placeholder={
-              isCurrentUserBlocked || isReceiverBlocked
-                ? "You cannot send a message"
-                : "Type a message..."
-            }
+            placeholder={isCurrentUserBlocked || isReceiverBlocked ? "You cannot send a message" : "Type a message..."}
             value={text}
             onChange={(e) => setText(e.target.value)}
             disabled={isCurrentUserBlocked || isReceiverBlocked}
           />
           <div className="emoji">
-            <img
-              src="/emoji.png"
-              alt="Emoji Picker"
-              onClick={() => setOpen((prev) => !prev)}
-            />
+            <img src="/emoji.png" alt="Emoji Picker" onClick={() => setOpen((prev) => !prev)} />
             <div className={`picker ${open ? "open" : ""}`}>
               <EmojiPicker onEmojiClick={handleEmoji} />
             </div>
