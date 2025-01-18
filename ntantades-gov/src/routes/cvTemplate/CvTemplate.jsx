@@ -4,6 +4,7 @@ import "./cvTemplate.css"
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../../backend/firebase";
+import { getAuth } from "firebase/auth";
 
 function CvTemplate() {
   const navigate = useNavigate();
@@ -14,7 +15,6 @@ function CvTemplate() {
     phone: "",
     contactHours: "",
     notes: "",
-    profilePicture: null,
   });
 
 
@@ -22,22 +22,26 @@ function CvTemplate() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, profilePicture: e.target.files[0] });
-  };
 
   const handleSubmit = async () => {
-    try {
-      const userId = "USER_ID"; // Replace with actual user ID from Firebase Auth
-      const userDoc = doc(db, "users", userId);
-
-      // Save data to Firestore
-      await setDoc(userDoc, { profileDetails: formData }, { merge: true });
-
-      navigate("/profile-ntanta");
-    } catch (error) {
-      console.error("Error saving profile data:", error);
-    }
+            try {
+                const auth = getAuth(); // Get Firebase Auth instance
+                const user = auth.currentUser; // Get the currently signed-in user
+                
+                if (!user) {
+                    throw new Error("No user is signed in.");
+                }
+    
+                const userId = user.uid; // Get the user's unique ID
+                const userDoc = doc(db, "users", userId);
+    
+                await setDoc(userDoc, { nannyDetails: formData }, { merge: true });
+    
+                // Navigate to the next page
+                navigate("/profile-ntanta");
+            } catch (error) {
+                console.error("Error saving data:", error);
+            }
   };
 
   return (
@@ -78,7 +82,7 @@ function CvTemplate() {
 
         <div className="form-item">
           <label htmlFor="contact-hours">Ώρες Επικοινωνίας:</label>
-          <select id="contact-hours" value={formData.contactHours} onChange={handleChange}>
+          <select id="contact-hours" value={formData.contactHours} onChange={(e) => setFormData({...formData, contactHours: e.target.value})}>
             <option value="">Επιλέξτε ώρες</option>
             <option value="morning">Πρωί</option>
             <option value="afternoon">Απόγευμα</option>
@@ -104,7 +108,7 @@ function CvTemplate() {
               type="file" 
               id="profile-picture"
               name="profile"
-              onChange={handleFileChange}
+              style={{backgroundColor: "transparent", color: "#333"}}
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { getAuth } from "firebase/auth";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
@@ -22,23 +22,3 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 export { auth, db, storage};
-
-
-
-const uploadNannies = async () => {
-  const nanniesRegion = await import('../src/data/nanniesRegions.json', {
-    assert: { type: 'json' },
-  });
-
-  const nanniesCollection = collection(db, "nannies");
-  try {
-    for (const nanny of nanniesRegion) {
-      await addDoc(nanniesCollection, nanny);
-    }
-    console.log("Nannies added successfully!");
-  } catch (error) {
-    console.error("Error adding nannies: ", error);
-  }
-};
-
-uploadNannies();

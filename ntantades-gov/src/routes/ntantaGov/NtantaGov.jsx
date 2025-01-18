@@ -4,7 +4,7 @@ import "./ntantaGov.css";
 import { useRef, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../../backend/firebase";
-
+import { getAuth } from "firebase/auth";
 
 function NtantaGov() {
     const navigate = useNavigate();
@@ -29,6 +29,20 @@ function NtantaGov() {
         hosting: "",
     });
 
+
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        const newErrors = errors;
+        if (!formData.firstName) newErrors.firstName = "Το όνομα είναι υποχρεωτικό.";
+        if (!formData.lastName) newErrors.lastName = "Το επώνυμο είναι υποχρεωτικό.";
+        if (!formData.birthDate) newErrors.birthDate = "Η ημερομηνία γέννησης είναι υποχρεωτική.";
+        if (!formData.amka) newErrors.amka = "Το ΑΜΚΑ είναι υποχρεωτικό.";
+        if (!formData.afm) newErrors.afm = "Το ΑΦΜ είναι υποχρεωτικό.";
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     
     const [adultBirthDay, setAdultBirthDay] = useState("");
     const [adultBirthMonth, setAdultBirthMonth] = useState("");
@@ -37,31 +51,39 @@ function NtantaGov() {
     const handleAdultBirthDateChange = () => {
         const fullDate = `${adultBirthYear}-${adultBirthMonth.padStart(2, "0")}-${adultBirthDay.padStart(2, "0")}`;
         setFormData({ ...formData, birthDate: fullDate });
-      };
-
-    const handleFileChange = (event) => {
-        const fileName = event.target.files[0] ? event.target.files[0].name : '';
-        console.log(fileName); // You can handle the file name as needed
     };
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
       };
     
-      const handleSubmit = async () => {
+    const handleSubmit = async () => {
+        if (!validateForm()) return;
+
         try {
-          const userId = "USER_ID"; // Replace with actual user ID from Firebase Auth
-          const userDoc = doc(db, "users", userId);
-    
-          // Save data to Firestore
-          await setDoc(userDoc, { parentDetails: formData }, { merge: true });
-    
-          // Navigate to the next page
-          navigate("/cv-template");
+            const auth = getAuth(); // Get Firebase Auth instance
+            const user = auth.currentUser; // Get the currently signed-in user
+            
+            if (!user) {
+                throw new Error("No user is signed in.");
+            }
+
+            const userId = user.uid; // Get the user's unique ID
+            const userDoc = doc(db, "users", userId);
+
+            await setDoc(userDoc, { 
+                nannyDetails: formData,
+
+             }, { merge: true }
+            );
+
+            // Navigate to the next page
+            navigate("/cv-template");
         } catch (error) {
-          console.error("Error saving data:", error);
+            console.error("Error saving data:", error);
         }
-      };
+    };
 
   return (
     <div className='NtantaGov'>
@@ -200,10 +222,9 @@ function NtantaGov() {
                         </div>
                         <input className="input" 
                                 type="file"
-                                ref={fileInputRef}
                                 name="studiesCertificate"
                                 value={formData.studiesCertificate}
-                                onChange={handleFileChange}
+                                onChange={handleChange}
                                 style={{ display: 'none'}} 
                                 id="file-upload"
                         />
@@ -236,10 +257,9 @@ function NtantaGov() {
                         
                         <input className="input" 
                                 type="file"
-                                ref={fileInputRef}
                                 name="healthCertificate"
                                 value={formData.healthCertificate}
-                                onChange={handleFileChange}
+                                onChange={handleChange}
                                 style={{ display: 'none'}} 
                                 id="file-upload"
                         />
@@ -272,10 +292,9 @@ function NtantaGov() {
                         
                         <input className="input" 
                                 type="file"
-                                ref={fileInputRef}
                                 name="firstAid"
                                 value={formData.firstAid}
-                                onChange={handleFileChange}
+                                onChange={handleChange}
                                 style={{ display: 'none'}} 
                                 id="file-upload"
                         />
@@ -310,8 +329,7 @@ function NtantaGov() {
                                 type="file"
                                 name="criminalRecord"
                                 value={formData.criminalRecord}
-                                ref={fileInputRef}
-                                onChange={handleFileChange}
+                                onChange={handleChange}
                                 style={{ display: 'none'}} 
                                 id="file-upload"
                         />

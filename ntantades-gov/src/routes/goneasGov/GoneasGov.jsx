@@ -3,7 +3,6 @@ import NavBar from "../../components/navBar/NavBar";
 import "./goneasGov.css";
 import { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-
 import { db } from "../../../backend/firebase";
 import { getAuth } from "firebase/auth";
 

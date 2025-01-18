@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, redirect, RouterProvider } from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import Homepage from "./routes/homepage/Homepage";
 import Ntanta from "./routes/ntanta/Ntanta";
 import Goneas from "./routes/goneas/Goneas";
@@ -31,25 +31,6 @@ import ParentSignup from './routes/parentSignUp/ParentSignUp';
 import NannySignup from './routes/nannySignUp/NannySignUp';
 
 
-const isAuthenticated = () => !!localStorage.getItem('token');
-
-// // Private Route Wrapper
-// const privateLoader = async () => {
-//   if (!isAuthenticated()) {
-//     return redirect('/login');
-//   }
-//   return null;
-// };
-
-// Fetch User Profile
-const profileLoader = async () => {
-  if (!isAuthenticated()) {
-    return redirect('/login');
-  }
-
-  const userProfile = JSON.parse(localStorage.getItem('userProfile') || '{}');
-  return { userProfile };
-};
 
 
 const router = createBrowserRouter([
@@ -121,7 +102,7 @@ const router = createBrowserRouter([
   {
     path: '/profile-ntanta',
     element: <NtantaProfile/>,
-    loader: profileLoader,
+    //loader: profileLoader,
   },
   {
     path: '/requests',

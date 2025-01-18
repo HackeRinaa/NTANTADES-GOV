@@ -1,11 +1,94 @@
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import "./ntantaProfile.css";
+import { useEffect, useState } from "react";
+import { getAuth } from "firebase/auth";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../backend/firebase";
 
 function NtantaProfile() {
 
   const navigate = useNavigate();
+  const [nannyDetails, setNannyDetails] = useState(null);
+  const [userName, setUserName] = useState("Φόρτωση..."); // Default text while loading
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [note, setNote] = useState("");
 
+
+  useEffect(() => {
+    const fetchNannyDetails = async () => {
+      try {
+        const auth = getAuth();
+        const user = auth.currentUser;
+
+        if (!user) {
+          console.error("No user is signed in.");
+          return;
+        }
+
+        const userDoc = doc(db, "users", user.uid);
+        const docSnapshot = await getDoc(userDoc);
+
+        if (docSnapshot.exists()) {
+          const data = docSnapshot.data();
+          const details = data.nannyDetails || {};
+          setNannyDetails(details);
+
+          // Set user-specific fields if available
+          const name = `${details.firstName} ${details.lastName}`
+          setUserName(name || "Άγνωστο Όνομα");
+          setEmail(user.email || "Άγνωστο Email");
+          setPhone(details.phone || "Άγνωστο Τηλέφωνο");
+          setNote(details.notes || "");
+        } else {
+          console.error("No user data found in Firestore.");
+        }
+      } catch (error) {
+        console.error("Error fetching nanny details:", error);
+      }
+    };
+
+    fetchNannyDetails();
+  }, []);
+
+  const handleNoteChange = (e) => {
+    setNote(e.target.value);
+  };
+
+  const handleEditToggle = () => {
+    setIsEditing((prev) => !prev);
+  };
+
+  const handleSave = async () => {
+    try {
+      const auth = getAuth();
+      const user = auth.currentUser;
+
+      if (!user) {
+        console.error("No user is signed in.");
+        return;
+      }
+
+      const userDoc = doc(db, "users", user.uid);
+
+      // Update only the `description` field in the nannyDetails` object
+      await updateDoc(userDoc, {
+        "nannyDetails.description": note,
+      });
+
+      // Update state and exit edit mode
+      setNannyDetails((prev) => ({ ...prev, description: note }));
+      setIsEditing(false);
+    } catch (error) {
+      console.error("Error saving note:", error);
+    }
+  };
+
+  if (!nannyDetails) {
+    return <p>Φόρτωση προφίλ...</p>;
+  }
   return (
     <div className="NtantaProfile">
       <NavBar/>
@@ -13,26 +96,43 @@ function NtantaProfile() {
         <div className="profile-container">
             <h2 className="title">Το Προφίλ μου</h2>
             <div className="row-info">
-              <img src="/girl.png" className="profile-pic" alt="" />
+              <img src="/parent.png" className="profile-pic" alt="" />
               <div className="container-info-profile">
-                <h3>Σοφία Παπαγεωργίου</h3>
+                <h3>{userName}</h3>
                 <div className="lines">
                   <img src="/mail.png" className="icon" alt="mail icon" />
-                  <p>sofia.papageo@gmail.com</p>
+                  <p>{email}</p>
                 </div>
                 <div className="lines">
                   <img src="/phone-call.png" className="icon" alt="phone icon" />
-                  <p>6987853459</p>  
+                  <p>{phone}</p>  
                 </div>
                 
               </div>
             </div>
             <div className="row-info">
-              <p className="details">Γεια σας! Ονομάζομαι Σοφία, είμαι 23 ετών και λατρεύω να δουλεύω με παιδιά.Έχω εμπειρία στη φροντίδα και δημιουργική απασχόληση παιδιών διαφόρων ηλικιών, ενώ δίνω πάντα προτεραιότητα στην ασφάλεια, την ανάπτυξη και τη χαρά τους. Είμαι υπεύθυνη, υπομονετική και μου αρέσει να βρίσκω διασκεδαστικούς και εκπαιδευτικούς
+            {isEditing ? (
+              <textarea
+                value={note}
+                onChange={handleNoteChange}
+                className="edit-textarea"
+              />
+            ) : (
+              <p className="details">
+                {nannyDetails.notes || "Δεν υπάρχουν λεπτομέρειες διαθέσιμες."}
               </p>
+            )}
             </div>
             <div className="row-info">
-              <button className="btn">Επεξεργασία</button>
+            {isEditing ? (
+              <button className="btn" onClick={handleSave}>
+                Αποθήκευση
+              </button>
+            ) : (
+              <button className="btn" onClick={handleEditToggle}>
+                Επεξεργασία
+              </button>
+            )}
             </div>
         </div>
         <div className="options">
