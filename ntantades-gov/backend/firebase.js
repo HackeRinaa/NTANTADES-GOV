@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyDVTl7fzu4q_x2XiQigF35XtkSzOjfXNLI",
   authDomain: "ntantades-gov-64f60.firebaseapp.com",

@@ -25,22 +25,6 @@ function GoneasProfile() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // const handleFileChange = async (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     try {
-  //       const storageRef = ref(storage, `profile-pictures/${file.name}`);
-  //       await uploadBytes(storageRef, file);
-  //       const downloadURL = await getDownloadURL(storageRef);
-  //       setFormData({ ...formData, profilePicture: downloadURL });
-  //       console.log("Profile picture uploaded successfully:", downloadURL);
-  //     } catch (error) {
-  //       console.error("Error uploading profile picture:", error);
-  //     }
-  //   }
-  // };
-  
-
   const handleSubmit = async () => {
           try {
               const auth = getAuth(); // Get Firebase Auth instance
