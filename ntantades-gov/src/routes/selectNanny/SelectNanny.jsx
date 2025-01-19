@@ -72,7 +72,7 @@ const SelectNanny = () => {
 
     const handleBookAppointment = () => {
         onAuthStateChanged(auth, (user) => {
-          if (user) {
+          if (user && user.data()?.role === "parent") {
             navigate("/success"); // User is logged in
           } else {
             navigate("/login"); // Redirect to login page

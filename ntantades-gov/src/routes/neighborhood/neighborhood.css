@@ -37,6 +37,12 @@
         font-weight: 400;
         color: #4a4e69;
     }
+    #region , #municipality {
+      padding: 10px 5px;
+      background-color: transparent;
+      border: 1px solid #4a4e69;
+      color: #4a4e69;
+    }
   }
   
   .dropdown label {

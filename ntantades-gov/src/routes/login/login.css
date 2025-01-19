@@ -98,4 +98,43 @@
     transition:  1s ease;
   }
 
+  /* Signup Section Styling */
+.signup-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.signup-section p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a4e69;
+  margin-bottom: 10px;
+}
+
+.signup-links {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.signup-button {
+  background-color: transparent;
+  border: none;
+  color: #4a4e69;
+  font-size: 14px;
+  padding: 8px 15px;
+  cursor: pointer;
+
+  span {
+    color: #e9631a;
+    font-weight: 600;
+  }
+}
+
+.signup-button:hover {
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+
 }
