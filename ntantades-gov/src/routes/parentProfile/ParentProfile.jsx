@@ -95,7 +95,7 @@ function ParentProfile() {
         <div className="profile-container">
             <h2 className="title">Το Προφίλ μου</h2>
             <div className="row-info">
-              <img src="/profile-parent.png" className="profile-pic" alt="" />
+              <img src="/profile-parent.jpg" className="profile-pic" alt="" />
               <div className="container-info-profile">
                 <h3>{userName}</h3>
                 <div className="lines">

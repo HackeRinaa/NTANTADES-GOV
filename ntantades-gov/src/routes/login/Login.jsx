@@ -77,6 +77,17 @@ const Login = () => {
           </div>
           <button type="submit" className="login-button" onClick={handleLogin}>Σύνδεση</button>
         </form>
+        <div className="signup-section">
+          <p>Δεν έχετε λογαριασμό;</p>
+          <div className="signup-links">
+            <button onClick={() => navigate("/signup-parent")} className="signup-button">
+              Εγγραφή ως <span>Γονέας</span>
+            </button>
+            <button onClick={() => navigate("/signup-nanny")} className="signup-button">
+              Εγγραφή ως <span>Νταντά</span>
+            </button>
+          </div>
+        </div>
       </main>
     </div>
   );

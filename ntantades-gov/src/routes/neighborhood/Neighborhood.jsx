@@ -4,7 +4,8 @@ import "./neighborhood.css";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../../backend/firebase";
-
+import regions from "../../data/regions.json";
+import municipalities from "../../data/municipalities.json";
 
 function Neighborhood() {
 
@@ -12,22 +13,7 @@ function Neighborhood() {
   const [region, setRegion] = useState("");
   const [municipality, setMunicipality] = useState("");
 
-  // Sample data for dropdowns
-  const regions = [
-    "Κέντρο Αθήνας",
-    "Βόρεια Προάστια",
-    "Νότια Προάστια",
-    "Ανατολικά Προάστια",
-    "Δυτικά Προάστια",
-  ];
 
-  const municipalities = {
-    "Κέντρο Αθήνας": ["Αθήνα", "Παγκράτι", "Ζωγράφου"],
-    "Βόρεια Προάστια": ["Μαρούσι", "Κηφισιά", "Χαλάνδρι"],
-    "Νότια Προάστια": ["Γλυφάδα", "Καλλιθέα", "Άλιμος"],
-    "Ανατολικά Προάστια": ["Παλλήνη", "Γέρακας", "Χολαργός"],
-    "Δυτικά Προάστια": ["Περιστέρι", "Ίλιον", "Αιγάλεω"],
-  };
 
   const handleSearch = async () => {
     try {
