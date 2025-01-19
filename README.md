@@ -33,8 +33,18 @@
 
 Κωδικοι για Login:
 Γονέας:
+    Username: maria.papaioannou@gmail.com
+    Password:   pass1234
 Νταντά:
+    Username: sofia.oik@gmail.com
+    Password: pass1234
 
 GitHub: https://github.com/HackeRinaa/NTANTADES-GOV
 
-
+Σχόλια:
+- Το Chat έχει παρθεί από προσωπικό project: https://github.com/HackeRinaa/react-firebase-chat-app
+- Χρησιμοποιήθηκε : firebase backend με user authentication , email και password σε react js
+                    vite(building tool)
+                    module: react-calendar
+                    react-router-dom για το routing
+- Δεν χρησιμοποιήθηκε framework για styling, μόνο css.
