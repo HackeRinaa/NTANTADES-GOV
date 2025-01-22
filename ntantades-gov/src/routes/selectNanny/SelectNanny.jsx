@@ -1,10 +1,10 @@
 import "./selectNanny.css";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { auth, db } from "../../../backend/firebase";
 import NavBar from "../../components/navBar/NavBar";
-import { onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const SelectNanny = () => {
     const navigate = useNavigate();
@@ -15,6 +15,7 @@ const SelectNanny = () => {
     const { selectedRegion, selectedMunicipality } = location.state || {};
     const [nannies, setNannies] = useState([]);
     const [itemsPerSlide, setItemsPerSlide] = useState(3);
+    const [userRole, setUserRole] = useState(null);
 
     useEffect(() => {
         const fetchNannies = async () => {
@@ -70,13 +71,21 @@ const SelectNanny = () => {
         return displayedItems;
     };
 
-    const handleBookAppointment = () => {
-        onAuthStateChanged(auth, (user) => {
-          if (user && user.data()?.role === "parent") {
-            navigate("/success"); // User is logged in
+    const handleBookAppointment = async () => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, async (user) => {
+          if (user) {
+            const userDoc = await getDoc(doc(db, "users", user.uid)); // Adjust the collection name if needed
+            if (userDoc.exists()) {
+                const userData = userDoc.data();
+                setUserRole(userData.role); 
+                if (userRole === 'parent') {
+                    navigate("/success");
+                }
+            }
           } else {
-            navigate("/login"); // Redirect to login page
-          }
+                navigate("/login"); // Redirect to login if no user is logged in
+            }
         });
     };
 

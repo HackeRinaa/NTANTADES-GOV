@@ -16,7 +16,7 @@ function Success() {
             </p>
             <div className="buttons">
                 <button className="back-button-suc" onClick={() => navigate('/')}>ΠΗΓΑΙΝΕ ΣΤΗΝ ΑΡΧΙΚΗ</button>
-                <button className="profile-button-suc" onClick={() => navigate('/profile-ntanta')}>ΠΡΟΦΙΛ ΜΟΥ</button>
+                <button className="profile-button-suc" onClick={() => navigate('/profile-parent')}>ΠΡΟΦΙΛ ΜΟΥ</button>
             </div>
         </div>
     </div>
