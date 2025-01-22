@@ -80,7 +80,7 @@ const SelectNanny = () => {
                 const userData = userDoc.data();
                 setUserRole(userData.role); 
                 if (userRole === 'parent') {
-                    navigate("/success");
+                    navigate("/appointment");
                 }
             }
           } else {

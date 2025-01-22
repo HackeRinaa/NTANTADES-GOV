@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
@@ -10,6 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation(); // Get location object
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -21,8 +22,13 @@ const Login = () => {
       const userDoc = await getDoc(doc(db, "users", user.uid));
       const role = userDoc.data()?.role;
   
+      // Redirect logic
       if (role === "parent") {
-        navigate("/profile-parent");
+        if (location.state?.from === "/select-nanny") {
+          navigate("/appointment"); // Redirect to /appointment if the previous page was /select-nanny
+        } else {
+          navigate("/profile-parent"); // Default redirect
+        }
       } else if (role === "nanny") {
         navigate("/profile-ntanta");
       } else {
@@ -32,7 +38,6 @@ const Login = () => {
       alert("Login failed: " + error.message);
     }
   };
-  
 
   return (
     <div className="Login">
